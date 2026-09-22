@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Studio Access & Registration | ANCO</title>
+  <meta name="description" content="Private booking studio and client registration for ANCO. Sign in or register to manage your vintage photo booth experience, backdrops, and live photo vault.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  
+  <style>
+    .auth-tabs {
+      background: rgba(14, 13, 16, 0.6);
+      border: 1px solid rgba(244, 235, 221, 0.12);
+      border-radius: var(--radius-sm);
+      padding: 4px;
+      display: flex;
+      gap: 4px;
+      margin-bottom: 1.5rem;
+    }
+    .auth-tab-btn {
+      flex: 1;
+      padding: 0.65rem 0.5rem;
+      border: none;
+      background: transparent;
+      color: var(--cream-muted);
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 3px;
+      transition: all var(--trans-fast);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .auth-tab-btn:hover {
+      color: var(--cream);
+      background: rgba(244, 235, 221, 0.05);
+    }
+    .auth-tab-btn.active {
+      background: var(--brass);
+      color: #141216 !important;
+      box-shadow: 0 2px 10px rgba(181, 138, 82, 0.35);
+    }
+    [data-theme="light"] .auth-tabs {
+      background: rgba(235, 224, 205, 0.5);
+      border-color: rgba(27, 24, 30, 0.12);
+    }
+    .auth-card-wrapper {
+      max-width: 520px;
+      width: 100%;
+      margin: 2rem auto;
+      position: relative;
+      z-index: 2;
+    }
+    .auth-feedback-toast {
+      display: none;
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1rem;
+      font-size: 0.82rem;
+      margin-bottom: 1rem;
+      align-items: center;
+      gap: 8px;
+    }
+    .top-action-bar {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .form-floating-vintage {
+      position: relative;
+    }
+    .pass-toggle-btn {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--cream-muted);
+      padding: 0;
+      cursor: pointer;
+    }
+    .pass-toggle-btn:hover {
+      color: var(--brass-light);
+    }
+    @media (max-width: 480px) {
+      .auth-card-wrapper {
+        margin: 1rem auto;
+        padding: 0;
+      }
+      .auth-tabs {
+        flex-direction: row;
+        gap: 2px;
+      }
+      .auth-tab-btn {
+        font-size: 0.7rem;
+        padding: 0.55rem 0.35rem;
+        letter-spacing: 0.04em;
+      }
+      .top-action-bar {
+        top: 0.75rem;
+        right: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body class="bg-midnight-dark d-flex align-items-center justify-content-center min-vh-100 p-3 position-relative">
+
+  <!-- Top Action Controls -->
+  <div class="top-action-bar">
+    <button class="audio-toggle-btn" id="themeToggle" title="Toggle Light / Dark Mode">
+      <i data-lucide="moon" style="width: 16px; height: 16px;"></i>
+    </button>
+    <button class="audio-toggle-btn" id="rtlToggle" title="Toggle RTL / LTR Layout">
+      <span style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;">RTL</span>
+    </button>
+  </div>
+
+  <div class="auth-card-wrapper">
+    <div class="card-vintage p-4 p-md-5 border-brass shadow-lg" style="border-width: 2px;">
+      
+      <!-- Brand Seal (Clickable to Home) -->
+      <a href="index.html" class="text-decoration-none d-block text-center mb-4 text-cream" title="Return to Home">
+        <div class="brand-icon-seal mx-auto mb-2" style="width: 50px; height: 50px;">
+          <i data-lucide="camera" style="width: 24px; height: 24px;"></i>
+        </div>
+        <h2 class="font-display text-cream fs-3 mb-1">ANCO Studio</h2>
+        <span class="studio-pill">Private Portal</span>
+      </a>
+
+      <!-- Tab Navigation: Login vs Register -->
+      <div class="auth-tabs" role="tablist">
+        <button class="auth-tab-btn active" id="tabBtnLogin" type="button" role="tab" aria-selected="true" onclick="switchAuthTab('login')">
+          <i data-lucide="log-in" style="width: 14px; height: 14px;"></i> Sign In
+        </button>
+        <button class="auth-tab-btn" id="tabBtnRegister" type="button" role="tab" aria-selected="false" onclick="switchAuthTab('register')">
+          <i data-lucide="user-plus" style="width: 14px; height: 14px;"></i> Create Account
+        </button>
+      </div>
+
+      <!-- Feedback Toast / Alert Area -->
+      <div id="authAlert" class="auth-feedback-toast bg-brass-15 border border-brass text-cream">
+        <i data-lucide="info" style="width: 16px; height: 16px; color: var(--brass-light);"></i>
+        <span id="authAlertMsg">Welcome to the Private Studio portal.</span>
+      </div>
+
+      <!-- ==================== SIGN IN FORM ==================== -->
+      <form id="loginPortalForm" class="auth-form-pane active" action="dashboard.html">
+        <div class="mb-3">
+          <label class="form-label-vintage" for="loginBookingId">Booking Passcode / Reference ID</label>
+          <div class="input-group">
+            <span class="input-group-text bg-midnight border-midnight text-brass"><i data-lucide="key" style="width: 16px; height: 16px;"></i></span>
+            <input type="text" id="loginBookingId" class="form-control form-control-vintage" value="ANL-894120" placeholder="e.g. ANL-894120" required>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label-vintage" for="loginEmail">Email Address</label>
+          <div class="input-group">
+            <span class="input-group-text bg-midnight border-midnight text-brass"><i data-lucide="mail" style="width: 16px; height: 16px;"></i></span>
+            <input type="email" id="loginEmail" class="form-control form-control-vintage" value="eleanor@heritagevilla.com" placeholder="host@example.com" required>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <div class="d-flex justify-content-between align-items-center mb-1">
+            <label class="form-label-vintage mb-0" for="loginPassword">Studio Password / PIN</label>
+            <a href="#" class="font-mono text-brass small text-decoration-none" onclick="alert('Demo Passcode: Use your Booking ID (e.g. ANL-894120) or click any 1-Click Demo account below.'); return false;">Forgot PIN?</a>
+          </div>
+          <div class="input-group position-relative">
+            <span class="input-group-text bg-midnight border-midnight text-brass"><i data-lucide="lock" style="width: 16px; height: 16px;"></i></span>
+            <input type="password" id="loginPassword" class="form-control form-control-vintage" value="vintage1968" placeholder="Enter password" required>
+            <button type="button" class="pass-toggle-btn" onclick="togglePassVisibility('loginPassword', this)">
+              <i data-lucide="eye" style="width: 16px; height: 16px;"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="rememberMe" checked>
+            <label class="form-check-label text-cream-muted small" for="rememberMe">Remember access</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-vintage-brass w-100 py-3 mb-3">
+          <i data-lucide="unlock" style="width: 16px; height: 16px;"></i> Enter Private Studio
+        </button>
+
+        <!-- 1-Click Demo Accounts -->
+        <div class="pt-3 border-top border-midnight text-center">
+          <span class="font-mono-tag text-cream-muted small d-block mb-2">QUICK 1-CLICK DEMO ACCESS:</span>
+          <div class="d-flex flex-column gap-2">
+            <button type="button" class="btn btn-vintage-outline w-100 py-2" id="demoWeddingBtn" style="font-size: 0.78rem;">
+              💍 Eleanor & Julian Vance (Autumn Wedding)
+            </button>
+            <button type="button" class="btn btn-vintage-outline w-100 py-2" id="demoCorporateBtn" style="font-size: 0.78rem;">
+              🍸 Vogue After Dark Gala (Fashion Brand)
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <!-- ==================== REGISTER / CREATE ACCOUNT FORM ==================== -->
+      <form id="registerPortalForm" class="auth-form-pane d-none" onsubmit="handleRegistration(event)">
+        <div class="mb-3">
+          <label class="form-label-vintage" for="regFullName">Client / Couple / Host Full Name</label>
+          <div class="input-group">
+            <span class="input-group-text bg-midnight border-midnight text-brass"><i data-lucide="user" style="width: 16px; height: 16px;"></i></span>
+            <input type="text" id="regFullName" class="form-control form-control-vintage" placeholder="e.g. Genevieve & Arthur Sterling" required>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label-vintage" for="regEmail">Email Address</label>
+          <div class="input-group">
+            <span class="input-group-text bg-midnight border-midnight text-brass"><i data-lucide="mail" style="width: 16px; height: 16px;"></i></span>
+            <input type="email" id="regEmail" class="form-control form-control-vintage" placeholder="genevieve@sterling.com" required>
+          </div>
+        </div>
+
+        <div class="row g-2 mb-3">
+          <div class="col-md-6">
+            <label class="form-label-vintage" for="regEventType">Event Type</label>
+            <select id="regEventType" class="form-select form-control-vintage" required>
+              <option value="Luxury Estate Wedding">Luxury Estate Wedding</option>
+              <option value="Gala / Brand Activation">Gala / Brand Activation</option>
+              <option value="Editorial & Soirée">Editorial & Soirée</option>
+              <option value="Milestone Celebration">Milestone Celebration</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label-vintage" for="regEventDate">Event Date</label>
+            <input type="date" id="regEventDate" class="form-control form-control-vintage" value="2026-12-20" required>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label-vintage" for="regPackage">Preferred Experience Suite</label>
+          <select id="regPackage" class="form-select form-control-vintage" required>
+            <option value="The Icon (Solid Oak Wood Booth)">The Icon (Solid Oak Wood Booth)</option>
+            <option value="The Flagship Aura (Studio Experience)">The Flagship Aura (Studio Experience)</option>
+            <option value="The Roaming Instant Camera Concierge">The Roaming Instant Camera Concierge</option>
+            <option value="Bespoke Couture Archive Experience">Bespoke Couture Archive Experience</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label-vintage" for="regPassword">Create Studio Password / PIN</label>
+          <div class="input-group position-relative">
+            <span class="input-group-text bg-midnight border-midnight text-brass"><i data-lucide="lock" style="width: 16px; height: 16px;"></i></span>
+            <input type="password" id="regPassword" class="form-control form-control-vintage" placeholder="Minimum 6 characters" minlength="6" required>
+            <button type="button" class="pass-toggle-btn" onclick="togglePassVisibility('regPassword', this)">
+              <i data-lucide="eye" style="width: 16px; height: 16px;"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="regTerms" required checked>
+            <label class="form-check-label text-cream-muted small" for="regTerms">
+              I agree to the <a href="packages.html" class="text-brass text-decoration-none">Terms of Studio Archive</a> & Privacy Protocol
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-vintage-brass w-100 py-3 mb-2">
+          <i data-lucide="sparkles" style="width: 16px; height: 16px;"></i> Create Studio Portal Account
+        </button>
+      </form>
+
+      <!-- Bottom Return Link -->
+      <div class="text-center mt-4 pt-2">
+        <a href="index.html" class="font-mono-tag text-brass text-decoration-none small d-inline-flex align-items-center gap-1">
+          <i data-lucide="arrow-left" style="width: 13px; height: 13px;"></i> Return to Public Website
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+  <script>
+    function switchAuthTab(mode) {
+      const loginTabBtn = document.getElementById('tabBtnLogin');
+      const registerTabBtn = document.getElementById('tabBtnRegister');
+      const loginForm = document.getElementById('loginPortalForm');
+      const registerForm = document.getElementById('registerPortalForm');
+      const alertBox = document.getElementById('authAlert');
+
+      if (mode === 'register') {
+        loginTabBtn.classList.remove('active');
+        loginTabBtn.setAttribute('aria-selected', 'false');
+        registerTabBtn.classList.add('active');
+        registerTabBtn.setAttribute('aria-selected', 'true');
+        
+        loginForm.classList.add('d-none');
+        registerForm.classList.remove('d-none');
+
+        showAlert('Create your private client portal to customize prints, select backdrops, and access vault files.');
+      } else {
+        registerTabBtn.classList.remove('active');
+        registerTabBtn.setAttribute('aria-selected', 'false');
+        loginTabBtn.classList.add('active');
+        loginTabBtn.setAttribute('aria-selected', 'true');
+
+        registerForm.classList.add('d-none');
+        loginForm.classList.remove('d-none');
+
+        showAlert('Enter your booking reference passcode to access your studio portal.');
+      }
+      if (window.lucide) window.lucide.createIcons();
+    }
+
+    function showAlert(msg) {
+      const alertBox = document.getElementById('authAlert');
+      const alertMsg = document.getElementById('authAlertMsg');
+      if (alertBox && alertMsg) {
+        alertMsg.textContent = msg;
+        alertBox.style.display = 'flex';
+      }
+    }
+
+    function togglePassVisibility(inputId, btn) {
+      const input = document.getElementById(inputId);
+      if (!input) return;
+      if (input.type === 'password') {
+        input.type = 'text';
+        btn.innerHTML = '<i data-lucide="eye-off" style="width: 16px; height: 16px;"></i>';
+      } else {
+        input.type = 'password';
+        btn.innerHTML = '<i data-lucide="eye" style="width: 16px; height: 16px;"></i>';
+      }
+      if (window.lucide) window.lucide.createIcons();
+    }
+
+    function handleRegistration(e) {
+      e.preventDefault();
+      const fullName = document.getElementById('regFullName').value.trim() || 'Valued Client';
+      const email = document.getElementById('regEmail').value.trim();
+      const eventType = document.getElementById('regEventType').value;
+      const eventDate = document.getElementById('regEventDate').value;
+      const pkg = document.getElementById('regPackage').value;
+      const randomId = 'ANL-' + Math.floor(100000 + Math.random() * 900000);
+
+      const newBooking = {
+        bookingId: randomId,
+        clientName: fullName,
+        eventType: eventType,
+        city: "Private Destination",
+        venue: "Client Private Estate",
+        eventDate: eventDate,
+        package: pkg,
+        status: "Confirmed & Scheduled",
+        statusStep: 2,
+        totalAmount: "$2,200.00",
+        depositPaid: "$750.00",
+        balanceDue: "$1,450.00",
+        backdrop: "Burgundy French Velvet",
+        stripTitle: fullName.toUpperCase()
+      };
+
+      localStorage.setItem('analogue_active_booking', JSON.stringify(newBooking));
+      showAlert(`Account created successfully! Redirecting to Studio Portal for ${fullName}...`);
+
+      setTimeout(() => {
+        window.location.href = 'dashboard.html';
+      }, 900);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) window.lucide.createIcons();
+
+      // Check URL query parameters (e.g. login.html?action=register)
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('action') === 'register' || urlParams.get('mode') === 'register') {
+        switchAuthTab('register');
+      }
+
+      // 1-Click Demo Accounts
+      const weddingBtn = document.getElementById('demoWeddingBtn');
+      const corpBtn = document.getElementById('demoCorporateBtn');
+
+      if (weddingBtn) {
+        weddingBtn.addEventListener('click', () => {
+          const weddingData = {
+            bookingId: "ANL-894120",
+            clientName: "Eleanor & Julian Vance",
+            eventType: "Autumn Estate Wedding",
+            city: "Mumbai / Alibaug",
+            venue: "The Heritage Vintage Villa",
+            eventDate: "2026-11-28",
+            package: "The Icon (Solid Oak Wood Booth)",
+            status: "Preparing Custom Prints",
+            statusStep: 3,
+            totalAmount: "$1,850.00",
+            depositPaid: "$650.00",
+            balanceDue: "$1,200.00",
+            backdrop: "Burgundy French Velvet",
+            stripTitle: "ELEANOR & JULIAN"
+          };
+          localStorage.setItem('analogue_active_booking', JSON.stringify(weddingData));
+          window.location.href = 'dashboard.html';
+        });
+      }
+
+      if (corpBtn) {
+        corpBtn.addEventListener('click', () => {
+          const corpData = {
+            bookingId: "ANL-992314",
+            clientName: "Vogue After Dark Gala",
+            eventType: "Fashion Brand Activation",
+            city: "Downtown Dubai",
+            venue: "The Opera Grand Ballroom",
+            eventDate: "2026-12-15",
+            package: "The Flagship Aura (Studio Experience)",
+            status: "Confirmed",
+            statusStep: 2,
+            totalAmount: "$2,450.00",
+            depositPaid: "$800.00",
+            balanceDue: "$1,650.00",
+            backdrop: "Retro Gold Shimmer",
+            stripTitle: "VOGUE NOIR GALA"
+          };
+          localStorage.setItem('analogue_active_booking', JSON.stringify(corpData));
+          window.location.href = 'dashboard.html';
+        });
+      }
+    });
+  </script>
+</body>
+</html>

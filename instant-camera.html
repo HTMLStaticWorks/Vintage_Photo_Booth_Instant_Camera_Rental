@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instant Camera Rental & Guestbook Bar | ANCO</title>
+  <meta name="description" content="Handheld vintage Polaroid SX-70 and Instax Wide camera rental packages for weddings, cocktail hours, and private parties. Includes film packs, embossed leather guestbooks, and doorstep delivery.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER / NAVIGATION ==================== -->
+  <header class="site-header">
+    <div class="container-fluid px-lg-5">
+      <nav class="navbar navbar-expand-xl navbar-dark p-0">
+        <a class="navbar-brand-logo" href="index.html">
+          <div class="brand-icon-seal">
+            <i data-lucide="camera" style="width: 18px; height: 18px;"></i>
+          </div>
+          <div class="brand-name">ANCO</div>
+        </a>
+
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+          <i data-lucide="menu" style="color: var(--cream);"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMain">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+            <li class="nav-item">
+              <a class="nav-link nav-link-vintage" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-vintage active" href="instant-camera.html">Home 2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-vintage" href="packages.html">Packages & Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-vintage" href="booths.html">Booth Collection</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-vintage" href="gallery.html">Print Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-vintage" href="about.html">About & Experience</a>
+            </li>
+          </ul>
+
+          <div class="d-flex align-items-center gap-2">
+            <!-- Audio Sound FX Toggle -->
+            <button class="audio-toggle-btn active" id="audioToggle" title="Toggle Vintage Shutter Sound FX">
+              <i data-lucide="volume-2" style="width: 18px; height: 18px;"></i>
+            </button>
+
+            <!-- Theme Mode Toggle (Dark / Warm Vintage Ivory) -->
+            <button class="audio-toggle-btn" id="themeToggle" title="Toggle Light / Dark Mode">
+              <i data-lucide="moon" style="width: 18px; height: 18px;"></i>
+            </button>
+
+            <!-- RTL / LTR Direction Toggle -->
+            <button class="audio-toggle-btn" id="rtlToggle" title="Toggle RTL / LTR Layout">
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;">RTL</span>
+            </button>
+
+            <!-- Login / Client Studio Button -->
+            <a href="login.html" class="audio-toggle-btn" title="Login" aria-label="Login">
+              <i data-lucide="user" style="width: 18px; height: 18px;"></i>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero-vintage">
+    <div class="container-fluid px-lg-5">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7">
+          <div class="mb-3">
+            <span class="stamp-badge stamp-brass me-2">● Home 2: Instant Camera Rental</span>
+            <span class="stamp-badge stamp-cherry">Guestbook Bars & Party Fleets</span>
+          </div>
+
+          <h1 class="hero-giant-title">
+            THE INSTANT <br>
+            <span class="italic-serif">Polaroid</span> <br>
+            FLEET.
+          </h1>
+
+          <p class="hero-lead-text">
+            Give your guests the joy of true analog tactile photography. Handheld vintage Polaroid SX-70s and wide-format Instax cameras delivered directly to your venue with fresh chemical film, custom leather albums, and metallic gold archival pens.
+          </p>
+
+          <div class="d-flex flex-wrap align-items-center gap-3">
+            <a href="#calculator" class="btn btn-vintage-brass">
+              <i data-lucide="calculator" style="width: 16px; height: 16px;"></i> Build Your Guestbook Bundle
+            </a>
+            <a href="#simulator" class="btn btn-vintage-outline">
+              <i data-lucide="camera" style="width: 16px; height: 16px;"></i> Snap & Develop Simulator
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="position-relative">
+            <div class="card-vintage p-2 shadow-lg border-brass" style="border-width: 2px;">
+              <img src="images/vintage_polaroid_camera_1789972621400.jpg" alt="Vintage Polaroid Camera Setup" class="showcase-feature-img">
+              <div class="p-3 text-center">
+                <span class="font-mono-tag text-brass d-block mb-1">ORIGINAL RESTORED FLEET</span>
+                <h5 class="font-display text-cream mb-0">The 1977 Polaroid SX-70 Sonar</h5>
+              </div>
+            </div>
+
+            <!-- Overlapping Polaroid Print -->
+            <div class="polaroid-frame polaroid-tilt-right position-absolute" style="bottom: -35px; right: -15px; width: 190px; z-index: 10;">
+              <img src="IMAGW/pexels-airamdphoto-11627196.jpg" alt="Polaroid Sample">
+              <div class="polaroid-caption">Cocktail Hour Magic</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MARQUEE TICKER ==================== -->
+  <div class="vintage-marquee-container">
+    <div class="vintage-marquee-track">
+      <span class="marquee-item"><span class="marquee-dot"></span> RESTORED VINTAGE POLAROID SX-70</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> FUJIFILM INSTAX WIDE 300</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> EMBOSSED LEATHER GUESTBOOKS</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> DOORSTEP DELIVERY & PREPAID RETURN BOX</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> ZERO UNUSED FILM LOSS POLICY</span>
+      <!-- Repeated for loop -->
+      <span class="marquee-item"><span class="marquee-dot"></span> RESTORED VINTAGE POLAROID SX-70</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> FUJIFILM INSTAX WIDE 300</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> EMBOSSED LEATHER GUESTBOOKS</span>
+    </div>
+  </div>
+
+  <!-- ==================== INTERACTIVE POLAROID SIMULATOR ==================== -->
+  <section id="simulator" class="py-5 bg-midnight-surface">
+    <div class="container py-lg-4">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="stamp-badge stamp-cherry mb-2">Interactive Experience</span>
+        <h2 class="font-display display-5 text-cream">Snap & Watch It Develop</h2>
+        <p class="text-cream-muted">Experience the magic of real analog chemical emulsion. Click the red shutter button below to trigger the mirror slap, film motor eject, and watch the photo develop live.</p>
+      </div>
+
+      <div class="row align-items-center g-5 justify-content-center">
+        <div class="col-lg-5 text-center">
+          <div class="simulator-box p-4">
+            <h4 class="font-display text-cream mb-3">1. Trigger The Shutter</h4>
+            <div class="my-4">
+              <button class="camera-shutter-trigger" id="polaroidSnapBtn" title="Click to snap photo!">
+                <i data-lucide="aperture" style="width: 32px; height: 32px;"></i>
+              </button>
+            </div>
+            <p class="font-mono-tag text-cream-muted mb-4">CLICK TO FIRE SHUTTER</p>
+
+            <div class="text-start mb-3">
+              <label class="form-label-vintage d-block" for="polaroidCaptionInput">Write Handwritten Caption</label>
+              <input type="text" id="polaroidCaptionInput" class="form-control form-control-vintage" value="First dance • 10.24.26" placeholder="Write on the bottom border...">
+            </div>
+
+            <div class="text-start">
+              <label class="form-label-vintage d-block" for="polaroidUploadInput">Or Upload Your Own Photo</label>
+              <input type="file" id="polaroidUploadInput" accept="image/*" class="form-control form-control-vintage">
+            </div>
+
+            <div class="mt-4 pt-3 border-top border-midnight" id="polaroidDevStatus">
+              <span class="text-brass"><i data-lucide="check-circle" style="width:14px; height:14px;"></i> Camera loaded with fresh color 600 film</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5 d-flex justify-content-center">
+          <div class="polaroid-frame developing-film" id="simulatedPolaroid" style="width: 320px;">
+            <img src="images/vintage_photostrip_sample_1789972823467.jpg" id="polaroidImageTarget" alt="Developing Polaroid Photo">
+            <div class="polaroid-caption" id="polaroidCaptionText">First dance • 10.24.26</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CAMERA FLEET ==================== -->
+  <section class="py-5 bg-midnight-surface" id="fleet">
+    <div class="container py-lg-4">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="stamp-badge stamp-brass mb-2">Our Archival Fleet</span>
+        <h2 class="font-display display-5 text-cream">Select Your Analog Arsenal</h2>
+        <p class="text-cream-muted">Each camera is fully restored, tested with fresh batteries, and equipped with high-yield film packs.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Model 1 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card-vintage h-100 d-flex flex-column">
+            <img src="images/vintage_polaroid_camera_1789972621400.jpg" alt="Polaroid SX-70" class="card-square-img">
+            <span class="stamp-badge stamp-cherry mb-2 align-self-start">1977 Folding SLR</span>
+            <h4 class="font-display text-cream fs-5 mb-1">Polaroid SX-70 Original</h4>
+            <p class="text-cream-muted small mb-3 flex-grow-1">The legendary collapsible chrome & tan leather SLR. Produces the quintessential vintage square format print.</p>
+            <div class="font-mono-tag text-brass mt-auto">$55 / Day Rental</div>
+          </div>
+        </div>
+
+        <!-- Model 2 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card-vintage h-100 d-flex flex-column">
+            <img src="IMAGW/pexels-introspectivedsgn-7359999.jpg" alt="Instax Wide 300" class="card-square-img">
+            <span class="stamp-badge stamp-brass mb-2 align-self-start">Double Format</span>
+            <h4 class="font-display text-cream fs-5 mb-1">Fujifilm Instax Wide 300</h4>
+            <p class="text-cream-muted small mb-3 flex-grow-1">Twice the size of mini film. Perfect for group shots, party tables, and rich landscape compositions.</p>
+            <div class="font-mono-tag text-brass mt-auto">$45 / Day Rental</div>
+          </div>
+        </div>
+
+        <!-- Model 3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card-vintage h-100 d-flex flex-column">
+            <img src="IMAGW/pexels-fotios-photos-6273881.jpg" alt="Polaroid Now+ Gen 2" class="card-square-img">
+            <span class="stamp-badge stamp-peach mb-2 align-self-start">Modern Classic</span>
+            <h4 class="font-display text-cream fs-5 mb-1">Polaroid Now+ Gen 2</h4>
+            <p class="text-cream-muted small mb-3 flex-grow-1">Modern autofocus with creative snap-on colored lens filters (starburst, yellow, red vignette).</p>
+            <div class="font-mono-tag text-brass mt-auto">$40 / Day Rental</div>
+          </div>
+        </div>
+
+        <!-- Model 4 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card-vintage h-100 d-flex flex-column">
+            <img src="IMAGW/pexels-david-kouakou-536418893-17641795.jpg" alt="35mm Film Point-and-Shoot" class="card-square-img">
+            <span class="stamp-badge stamp-brass mb-2 align-self-start">Authentic 35mm</span>
+            <h4 class="font-display text-cream fs-5 mb-1">Vintage 35mm Point-and-Shoot Fleet</h4>
+            <p class="text-cream-muted small mb-3 flex-grow-1">Pre-loaded with Kodak Gold 200 film. We collect, develop, scan, and ship prints to you post-event.</p>
+            <div class="font-mono-tag text-brass mt-auto">$50 / Day (Incl. Scan)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== GUESTBOOK BUNDLE CALCULATOR ==================== -->
+  <section id="calculator" class="py-5 bg-midnight-surface">
+    <div class="container py-lg-4">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <span class="stamp-badge stamp-cherry mb-2">Build Your Guestbook Bar</span>
+          <h2 class="font-display display-5 text-cream mb-3">Custom Instant Bundle Calculator</h2>
+          <p class="text-cream-muted mb-4">Configure the exact number of cameras and film packs for your guest count. All unused sealed film packs are 100% refundable.</p>
+
+          <div class="mb-4">
+            <label class="form-label-vintage d-flex justify-content-between">
+              <span>Number of Cameras</span>
+              <span class="text-brass fw-bold" id="calcCamerasValue">3 Cameras</span>
+            </label>
+            <input type="range" class="form-range" id="calcCameras" min="1" max="10" value="3">
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label-vintage d-flex justify-content-between">
+              <span>Film Packs (20 Prints Per Pack)</span>
+              <span class="text-brass fw-bold" id="calcFilmValue">100 Prints (5 Packs)</span>
+            </label>
+            <input type="range" class="form-range" id="calcFilm" min="2" max="20" value="5">
+          </div>
+
+          <div class="mb-4 d-flex flex-column gap-2">
+            <div class="form-check">
+              <input class="form-check-input bg-midnight border-brass" type="checkbox" id="calcGuestbook" checked>
+              <label class="form-check-label text-cream-soft small" for="calcGuestbook">
+                Custom Foil-Embossed Archival Leather Guestbook (+$65)
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input bg-midnight border-brass" type="checkbox" id="calcMarkers" checked>
+              <label class="form-check-label text-cream-soft small" for="calcMarkers">
+                Metallic Gold & Silver Archival Pens + Brass Corner Stickers (+$25)
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input bg-midnight border-brass" type="checkbox" id="calcAttendant">
+              <label class="form-check-label text-cream-soft small" for="calcAttendant">
+                Dedicated 3-Hour Roaming Camera Concierge Butler (+$150)
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card-vintage p-4 p-lg-5 border-brass" style="border-width: 2px;">
+            <div class="d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom border-midnight">
+              <span class="font-mono-tag text-cream-muted">ESTIMATED BUNDLE TOTAL</span>
+              <div class="font-display display-5 text-cream fw-bold" id="bundleTotal">$365</div>
+            </div>
+
+            <ul class="feature-check-list mb-4">
+              <li><i data-lucide="check"></i> <span>Handcrafted wooden tabletop display signage</span></li>
+              <li><i data-lucide="check"></i> <span>Sanitized doorstep venue delivery 24h prior</span></li>
+              <li><i data-lucide="check"></i> <span>Prepaid return packaging box included</span></li>
+              <li><i data-lucide="check"></i> <span>100% refund on un-opened film packs</span></li>
+            </ul>
+
+            <button class="btn btn-vintage-brass w-100 py-3" data-bs-toggle="modal" data-bs-target="#bookingModal">
+              <i data-lucide="shopping-bag" style="width: 16px; height: 16px;"></i> Reserve This Camera Bundle
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== HOW IT WORKS ==================== -->
+  <section class="py-5 bg-midnight">
+    <div class="container py-lg-4">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="stamp-badge stamp-brass mb-2">Seamless Rental Logistics</span>
+        <h2 class="font-display display-5 text-cream">Doorstep to Party in 4 Steps</h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="card-vintage h-100">
+            <div class="font-mono-tag text-cherry fs-4 mb-2">01</div>
+            <h4 class="font-display text-cream fs-5 mb-2">Reserve Online</h4>
+            <p class="text-cream-muted small mb-0">Select your camera quantity, film stock, and optional personalized guest album.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card-vintage h-100">
+            <div class="font-mono-tag text-cherry fs-4 mb-2">02</div>
+            <h4 class="font-display text-cream fs-5 mb-2">Doorstep Delivery</h4>
+            <p class="text-cream-muted small mb-0">Delivered in custom hard cases to your venue or hotel 24–48 hours before the event.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card-vintage h-100">
+            <div class="font-mono-tag text-cherry fs-4 mb-2">03</div>
+            <h4 class="font-display text-cream fs-5 mb-2">Snap & Celebrate</h4>
+            <p class="text-cream-muted small mb-0">Guests shoot real analog memories and leave heartfelt handwritten notes in your guestbook.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card-vintage h-100">
+            <div class="font-mono-tag text-cherry fs-4 mb-2">04</div>
+            <h4 class="font-display text-cream fs-5 mb-2">Prepaid Return</h4>
+            <p class="text-cream-muted small mb-0">Place the kit in the pre-labeled box and hand it to our courier. Zero stress.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <div class="brand-icon-seal">
+              <i data-lucide="camera" style="width: 18px; height: 18px;"></i>
+            </div>
+            <div class="font-display fw-bold fs-4 text-cream">ANCO</div>
+          </div>
+          <p class="text-cream-muted small mb-3">
+            Curators of tangible nostalgia. Providing handcrafted vintage photo booths, instant Polaroid bars, and luxury guestbook keepsakes across India, UAE, and Southeast Asia.
+          </p>
+          <div class="font-mono-tag text-brass small mb-3">
+            “MAKE IT. SNAP IT. KEEP IT.”
+          </div>
+
+          <!-- Social Media Icons -->
+          <div class="footer-social-links">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="vintage-social-icon" title="Instagram" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="vintage-social-icon" title="Facebook" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="vintage-social-icon" title="LinkedIn" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect width="4" height="12" x="2" y="9"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="https://www.x.com" target="_blank" rel="noopener noreferrer" class="vintage-social-icon" title="X (Twitter)" aria-label="X (Twitter)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768M20 4l-6.768 6.768"></path>
+              </svg>
+            </a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="vintage-social-icon" title="YouTube" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path>
+                <polygon points="10 15 15 12 10 9 10 15" fill="currentColor"></polygon>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <div class="font-mono-tag text-cream mb-3">EXPLORE</div>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="instant-camera.html" class="footer-link">Home 2 (Instant Cameras)</a></li>
+            <li><a href="packages.html" class="footer-link">Packages & Pricing</a></li>
+            <li><a href="booths.html" class="footer-link">Booth Collection</a></li>
+            <li><a href="gallery.html" class="footer-link">Print Gallery</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <div class="font-mono-tag text-cream mb-3">EXPERIENCE</div>
+          <ul class="list-unstyled">
+            <li><a href="about.html" class="footer-link">Brand Philosophy</a></li>
+            <li><a href="about.html#how-it-works" class="footer-link">How Rental Works</a></li>
+            <li><a href="about.html#faqs" class="footer-link">Frequently Asked</a></li>
+            <li><a href="login.html" class="footer-link">Customer Studio</a></li>
+            <li><a href="dashboard.html" class="footer-link">Live Portal Demo</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="font-mono-tag text-cream mb-3">STUDIO LOCATIONS</div>
+          <p class="text-cream-muted small mb-2"><strong class="text-cream">Mumbai Studio:</strong> Bandra West, Mumbai 400050</p>
+          <p class="text-cream-muted small mb-2"><strong class="text-cream">Delhi Studio:</strong> Mehrauli Heritage Quarter, New Delhi</p>
+          <p class="text-cream-muted small mb-3"><strong class="text-cream">Dubai Concierge:</strong> Downtown Dubai, UAE</p>
+          <div class="font-mono-tag text-brass small">DIRECT: +91 99672 19574 • HELLO@ANCO.COM</div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <div>&copy; 2026 ANCO. All rights reserved. Handcrafted vintage photography systems.</div>
+        <div class="d-flex gap-4">
+          <a href="#" class="text-cream-muted text-decoration-none">Privacy Policy</a>
+          <a href="#" class="text-cream-muted text-decoration-none">Rental Agreement</a>
+          <a href="dashboard.html" class="text-brass text-decoration-none">Customer Portal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== BOOKING MODAL ==================== -->
+  <div class="modal fade modal-vintage" id="bookingModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="stamp-badge stamp-cherry mb-1">Direct Reservation Concierge</span>
+            <h4 class="modal-title font-display text-cream">Reserve Instant Camera Bundle</h4>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body p-4" id="bookingModalBody">
+          <form id="quickBookingForm">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label-vintage" for="bookName">Your Full Name / Host</label>
+                <input type="text" id="bookName" class="form-control form-control-vintage" placeholder="e.g., Sarah Jenkins" required>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label-vintage" for="bookEmail">Email Address</label>
+                <input type="email" id="bookEmail" class="form-control form-control-vintage" placeholder="sarah@example.com" required>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label-vintage" for="bookPhone">Phone / WhatsApp Number</label>
+                <input type="tel" id="bookPhone" class="form-control form-control-vintage" placeholder="+91 98765 43210" required>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label-vintage" for="bookCity">Event City / Destination</label>
+                <select id="bookCity" class="form-select form-control-vintage" required>
+                  <option value="Mumbai">Mumbai</option>
+                  <option value="Delhi NCR">Delhi NCR</option>
+                  <option value="Bangalore">Bangalore</option>
+                  <option value="Jaipur / Udaipur">Jaipur / Udaipur</option>
+                  <option value="Goa">Goa</option>
+                  <option value="Dubai / Abu Dhabi">Dubai / Abu Dhabi</option>
+                  <option value="Bangkok / Phuket">Bangkok / Phuket</option>
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label-vintage" for="bookDate">Event Date</label>
+                <input type="date" id="bookDate" class="form-control form-control-vintage" value="2026-11-28" required>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label-vintage" for="bookPackage">Camera Package</label>
+                <select id="bookPackage" class="form-select form-control-vintage" required>
+                  <option value="Instant Camera Guestbook Bar">Instant Camera Guestbook Bar (3 Cameras + Album) — $365</option>
+                  <option value="Polaroid SX-70 Vintage Fleet">Polaroid SX-70 Vintage Fleet (5 Cameras + Film) — $580</option>
+                  <option value="The Icon (Signature Solid Oak Booth)">The Icon (Signature Solid Oak Booth) — $1,450</option>
+                </select>
+              </div>
+
+              <div class="col-12 mt-4">
+                <button type="submit" class="btn btn-vintage-brass w-100 py-3">
+                  <i data-lucide="check-circle" style="width: 18px; height: 18px;"></i> Submit & Create Private Studio Access
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+  <script src="js/instant-camera.js"></script>
+</body>
+</html>

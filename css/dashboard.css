@@ -1,0 +1,418 @@
+/* ==========================================================================
+   CUSTOMER DASHBOARD — PRIVATE BOOKING STUDIO
+   Style: Dark Studio Aesthetic with Brass & Ivory Accents
+   ========================================================================== */
+
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--midnight-dark);
+  color: var(--cream);
+  overflow-x: hidden;
+}
+
+/* Sidebar */
+.dashboard-sidebar {
+  width: 280px;
+  background-color: var(--midnight);
+  border-right: 1px solid rgba(244, 235, 221, 0.08);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.dashboard-brand {
+  padding: 1.75rem 1.5rem;
+  border-bottom: 1px solid rgba(244, 235, 221, 0.08);
+}
+
+.studio-pill {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  background: rgba(181, 138, 82, 0.15);
+  border: 1px solid var(--brass);
+  color: var(--brass-light);
+  padding: 2px 8px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.dashboard-nav-list {
+  list-style: none;
+  padding: 1.25rem 0.75rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.dashboard-nav-item a {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.8rem 1rem;
+  color: var(--cream-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  transition: all var(--trans-fast);
+}
+
+.dashboard-nav-item a:hover {
+  background: rgba(244, 235, 221, 0.04);
+  color: var(--cream);
+}
+
+.dashboard-nav-item.active a {
+  background: var(--midnight-surface);
+  color: var(--brass-light);
+  border-left: 3px solid var(--brass);
+}
+
+.dashboard-user-profile {
+  margin-top: auto;
+  padding: 1.25rem;
+  border-top: 1px solid rgba(244, 235, 221, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.user-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1.5px solid var(--brass);
+  object-fit: cover;
+  background: var(--midnight-elevated);
+}
+
+/* Dashboard Main Content */
+.dashboard-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-topbar {
+  padding: 1.25rem 2.5rem;
+  background-color: var(--midnight);
+  border-bottom: 1px solid rgba(244, 235, 221, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Dashboard Responsiveness & Equalization */
+.dashboard-content-body {
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  flex: 1;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-layout { 
+    flex-direction: column; 
+    min-height: 100vh;
+  }
+  .dashboard-sidebar { 
+    width: 100%; 
+    height: auto; 
+    position: relative; 
+    border-right: none;
+    border-bottom: 1px solid rgba(244, 235, 221, 0.08);
+  }
+  .dashboard-nav-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0.75rem 1rem;
+    gap: 0.5rem;
+  }
+  .dashboard-nav-item a {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.82rem;
+  }
+  .dashboard-topbar { 
+    padding: 1rem 1.25rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .dashboard-user-profile {
+    display: none;
+  }
+}
+
+/* Status Progression Timeline */
+.timeline-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.timeline-stepper::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 30px;
+  right: 30px;
+  height: 2px;
+  background: var(--midnight-border);
+  z-index: 1;
+}
+
+.timeline-progress-bar {
+  position: absolute;
+  top: 18px;
+  left: 30px;
+  width: 50%; /* active progress */
+  height: 2px;
+  background: linear-gradient(90deg, var(--cherry) 0%, var(--brass) 100%);
+  z-index: 2;
+  transition: width var(--trans-smooth);
+}
+
+.step-item {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  padding: 0 4px;
+}
+
+.step-node {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--midnight);
+  border: 2px solid var(--midnight-border);
+  color: var(--cream-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  transition: all var(--trans-fast);
+  flex-shrink: 0;
+}
+
+.step-item.completed .step-node {
+  background: var(--cherry);
+  border-color: var(--cherry);
+  color: #fff;
+}
+
+.step-item.current .step-node {
+  background: var(--brass);
+  border-color: #fff;
+  color: var(--midnight-dark);
+  box-shadow: 0 0 0 4px var(--brass-glow);
+}
+
+.step-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cream-muted);
+  word-break: break-word;
+}
+
+.step-item.current .step-label {
+  color: var(--brass-light);
+  font-weight: 700;
+}
+
+/* Timeline Stepper on Mobile (<= 768px) */
+@media (max-width: 768px) {
+  .timeline-stepper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding-left: 1rem;
+  }
+  .timeline-stepper::before {
+    left: 28px;
+    top: 15px;
+    bottom: 15px;
+    width: 2px;
+    height: auto;
+    right: auto;
+  }
+  .timeline-progress-bar {
+    left: 28px;
+    top: 15px;
+    width: 2px;
+    height: 50%;
+  }
+  .step-item {
+    flex-direction: row;
+    text-align: left;
+    gap: 1rem;
+    width: 100%;
+    padding: 0;
+  }
+  .step-node {
+    margin-bottom: 0;
+  }
+}
+
+/* Event Countdown Ticker */
+.countdown-box {
+  background: var(--midnight-surface);
+  border: 1px solid rgba(181, 138, 82, 0.3);
+  border-radius: var(--radius-md);
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.countdown-digit {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 800;
+  color: var(--cream);
+  line-height: 1;
+}
+
+.countdown-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--peach);
+  margin-top: 0.35rem;
+}
+
+/* Backdrop Picker Grid */
+.backdrop-swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 0.85rem;
+}
+
+.backdrop-swatch-card {
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--midnight-surface);
+  transition: all var(--trans-fast);
+  text-align: center;
+  padding: 6px;
+}
+
+.backdrop-swatch-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.backdrop-swatch-card.active {
+  border-color: var(--brass);
+  box-shadow: 0 0 12px var(--brass-glow);
+}
+
+.backdrop-swatch-card span {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  display: block;
+  margin-top: 6px;
+  color: var(--cream-soft);
+}
+
+/* Strip Template Live Editor */
+.studio-preview-frame {
+  background: #25222B;
+  border: 1px dashed rgba(244, 235, 221, 0.2);
+  border-radius: var(--radius-md);
+  padding: clamp(1rem, 2vw, 2rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+  max-width: 100%;
+}
+
+/* Invoice Bill Component */
+.invoice-paper {
+  background: #FFFDF9;
+  color: #1A171D;
+  padding: clamp(1.25rem, 3.5vw, 2.5rem);
+  border-radius: 2px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  border-top: 6px solid var(--cherry);
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.invoice-paper::after {
+  content: "CONFIRMED";
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-family: var(--font-mono);
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 700;
+  color: rgba(166, 61, 64, 0.25);
+  border: 3px solid rgba(166, 61, 64, 0.25);
+  padding: 3px 10px;
+  transform: rotate(-12deg);
+  pointer-events: none;
+}
+
+@media (max-width: 576px) {
+  .dashboard-topbar h1 {
+    font-size: 1.25rem !important;
+  }
+  .invoice-paper::after {
+    top: 15px;
+    right: 15px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Guest Photo Vault Cards — Equal Sizing & No-Crop */
+#vaultTab .scanned-photo-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#vaultTab .scanned-photo-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 1px;
+  display: block;
+}
+
+#vaultTab .photo-meta {
+  margin-top: auto;
+}
+

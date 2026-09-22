@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archival Print Gallery | ANCO</title>
+  <meta name="description" content="Explore real moments captured across luxury weddings, fashion galas, and private events. Scanned photo strips, polaroids, and 35mm film grain portraits.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER / NAVIGATION ==================== -->
+  <header class="site-header">
+    <div class="container-fluid px-lg-5">
+      <nav class="navbar navbar-expand-xl navbar-dark p-0">
+        <a class="navbar-brand-logo" href="index.html">
+          <div class="brand-icon-seal">
+            <i data-lucide="camera" style="width: 18px; height: 18px;"></i>
+          </div>
+          <div class="brand-name">ANCO</div>
+        </a>
+
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+          <i data-lucide="menu" style="color: var(--cream);"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMain">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+            <li class="nav-item">
+              <a class="nav-link nav-link-vintage" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-vintage" href="instant-camera.html">Instant Cameras</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-vintage" href="packages.html">Packages & Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-vintage" href="booths.html">Booth Collection</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-vintage active" href="gallery.html">Print Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-vintage" href="about.html">About & Experience</a>
+            </li>
+          </ul>
+
+          <div class="d-flex align-items-center gap-2">
+            <!-- Audio Sound FX Toggle -->
+            <button class="audio-toggle-btn active" id="audioToggle" title="Toggle Vintage Shutter Sound FX">
+              <i data-lucide="volume-2" style="width: 18px; height: 18px;"></i>
+            </button>
+
+            <!-- Theme Mode Toggle (Dark / Warm Vintage Ivory) -->
+            <button class="audio-toggle-btn" id="themeToggle" title="Toggle Light / Dark Mode">
+              <i data-lucide="moon" style="width: 18px; height: 18px;"></i>
+            </button>
+
+            <!-- RTL / LTR Direction Toggle -->
+            <button class="audio-toggle-btn" id="rtlToggle" title="Toggle RTL / LTR Layout">
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;">RTL</span>
+            </button>
+
+            <!-- Login / Client Studio Button -->
+            <a href="login.html" class="audio-toggle-btn" title="Login" aria-label="Login">
+              <i data-lucide="user" style="width: 18px; height: 18px;"></i>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero-vintage" style="min-height: 50vh; padding-top: 8rem; padding-bottom: 2rem;">
+    <div class="container text-center max-w-900 mx-auto">
+      <span class="stamp-badge stamp-cherry mb-3">The Wall of Scans</span>
+      <h1 class="hero-giant-title mb-3">
+        EDITORIAL <span class="italic-serif">Keepsakes.</span>
+      </h1>
+      <p class="hero-lead-text mx-auto">
+        Every photograph below was printed physically on-site within 7 seconds and held by real guests before being archived to our silver halide cloud.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== GALLERY FILTER & MASONRY ==================== -->
+  <section class="py-5 bg-midnight-surface">
+    <div class="container py-lg-4">
+      
+      <!-- Filter Bar -->
+      <div class="gallery-filter-bar">
+        <button class="gallery-filter-btn active" data-filter="all">All Keepsakes</button>
+        <button class="gallery-filter-btn" data-filter="weddings">Weddings</button>
+        <button class="gallery-filter-btn" data-filter="corporate">Corporate & Galas</button>
+        <button class="gallery-filter-btn" data-filter="parties">Private Soirées</button>
+        <button class="gallery-filter-btn" data-filter="strips">Photo Strips</button>
+        <button class="gallery-filter-btn" data-filter="polaroids">Instant Polaroids</button>
+      </div>
+
+      <!-- Masonry Grid -->
+      <div class="masonry-grid" id="galleryGrid">
+        
+        <!-- Item 1: Photo Strip -->
+        <div class="masonry-item" data-category="strips weddings">
+          <div class="scanned-photo-card">
+            <img src="images/vintage_photostrip_sample_1789972823467.jpg" alt="Signature 4-Cut Strip">
+            <div class="photo-meta">
+              <span>SARAH & MICHAEL • 4-CUT NOIR</span>
+              <span>10.24.26</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2: Wedding Couple -->
+        <div class="masonry-item" data-category="weddings">
+          <div class="scanned-photo-card">
+            <img src="IMAGW/pexels-brahollari-35521114.jpg" alt="Wedding Portrait">
+            <div class="photo-meta">
+              <span>ALISON & LIAM • LAKE COMO</span>
+              <span>09.14.26</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3: Fashion Party -->
+        <div class="masonry-item" data-category="corporate">
+          <div class="scanned-photo-card">
+            <img src="IMAGW/pexels-airamdphoto-26733657.jpg" alt="Vogue Fashion Night">
+            <div class="photo-meta">
+              <span>VOGUE AFTER DARK • DUBAI</span>
+              <span>11.02.26</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4: Polaroid Table Setup -->
+        <div class="masonry-item" data-category="polaroids">
+          <div class="scanned-photo-card">
+            <img src="images/vintage_polaroid_camera_1789972621400.jpg" alt="Polaroid Camera Table Bar">
+            <div class="photo-meta">
+              <span>POLAROID GUESTBOOK BAR</span>
+              <span>AMBER FILM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5: Laughing Couple -->
+        <div class="masonry-item" data-category="parties">
+          <div class="scanned-photo-card">
+            <img src="IMAGW/pexels-eusouomatteus-32405337.jpg" alt="Party Candid">
+            <div class="photo-meta">
+              <span>STUDIO 54 CELEBRATION</span>
+              <span>08.19.26</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 6: Birthday Group -->
+        <div class="masonry-item" data-category="parties">
+          <div class="scanned-photo-card">
+            <img src="IMAGW/pexels-doouglasma-16403732.jpg" alt="Disco Guests">
+            <div class="photo-meta">
+              <span>MAYA'S 30TH ROOFTOP</span>
+              <span>07.12.26</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 7: High Fashion Gala -->
+        <div class="masonry-item" data-category="corporate">
+          <div class="scanned-photo-card">
+            <img src="IMAGW/pexels-introspectivedsgn-9271239.jpg" alt="Editorial Gala">
+            <div class="photo-meta">
+              <span>ARCHITECTURAL DIGEST GALA</span>
+              <span>10.05.26</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 8: Wood Cabin Booth in Venue -->
+        <div class="masonry-item" data-category="weddings">
+          <div class="scanned-photo-card">
+            <img src="images/vintage_wood_booth_1789972666481.jpg" alt="Wood Cabin Booth in Venue">
+            <div class="photo-meta">
+              <span>ESTATE WEDDING SUITE</span>
+              <span>11.18.26</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 9: Instant Camera Candid -->
+        <div class="masonry-item" data-category="polaroids weddings">
+          <div class="scanned-photo-card">
+            <img src="IMAGW/pexels-airamdphoto-11627196.jpg" alt="Cocktail Hour Polaroid">
+            <div class="photo-meta">
+              <span>COCKTAIL HOUR POLAROID</span>
+              <span>09.28.26</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== LIGHTBOX MODAL ==================== -->
+  <div class="vintage-lightbox" id="vintageLightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close-btn" id="lightboxClose">&times;</button>
+      <img src="" id="lightboxImg" alt="Enlarged Archival Print">
+      <div class="mt-3 font-mono-tag text-brass" id="lightboxCaption">ANCO • Archival Print</div>
+    </div>
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <div class="brand-icon-seal">
+              <i data-lucide="camera" style="width: 18px; height: 18px;"></i>
+            </div>
+            <div class="font-display fw-bold fs-4 text-cream">ANCO</div>
+          </div>
+          <p class="text-cream-muted small mb-3">
+            Curators of tangible nostalgia. Providing handcrafted vintage photo booths, instant Polaroid bars, and luxury guestbook keepsakes across India, UAE, and Southeast Asia.
+          </p>
+          <div class="font-mono-tag text-brass small mb-3">
+            “MAKE IT. SNAP IT. KEEP IT.”
+          </div>
+
+          <!-- Social Media Icons -->
+          <div class="footer-social-links">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="vintage-social-icon" title="Instagram" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="vintage-social-icon" title="Facebook" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="vintage-social-icon" title="LinkedIn" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect width="4" height="12" x="2" y="9"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="https://www.x.com" target="_blank" rel="noopener noreferrer" class="vintage-social-icon" title="X (Twitter)" aria-label="X (Twitter)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768M20 4l-6.768 6.768"></path>
+              </svg>
+            </a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="vintage-social-icon" title="YouTube" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path>
+                <polygon points="10 15 15 12 10 9 10 15" fill="currentColor"></polygon>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <div class="font-mono-tag text-cream mb-3">EXPLORE</div>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="instant-camera.html" class="footer-link">Instant Cameras</a></li>
+            <li><a href="packages.html" class="footer-link">Packages & Pricing</a></li>
+            <li><a href="booths.html" class="footer-link">Booth Collection</a></li>
+            <li><a href="gallery.html" class="footer-link">Print Gallery</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <div class="font-mono-tag text-cream mb-3">EXPERIENCE</div>
+          <ul class="list-unstyled">
+            <li><a href="about.html" class="footer-link">Brand Philosophy</a></li>
+            <li><a href="about.html#how-it-works" class="footer-link">How Rental Works</a></li>
+            <li><a href="about.html#faqs" class="footer-link">Frequently Asked</a></li>
+            <li><a href="login.html" class="footer-link">Customer Studio</a></li>
+            <li><a href="dashboard.html" class="footer-link">Live Portal Demo</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="font-mono-tag text-cream mb-3">STUDIO LOCATIONS</div>
+          <p class="text-cream-muted small mb-2"><strong class="text-cream">Mumbai Studio:</strong> Bandra West, Mumbai 400050</p>
+          <p class="text-cream-muted small mb-2"><strong class="text-cream">Delhi Studio:</strong> Mehrauli Heritage Quarter, New Delhi</p>
+          <p class="text-cream-muted small mb-3"><strong class="text-cream">Dubai Concierge:</strong> Downtown Dubai, UAE</p>
+          <div class="font-mono-tag text-brass small">DIRECT: +91 99672 19574 • HELLO@ANCO.COM</div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <div>&copy; 2026 ANCO. All rights reserved. Handcrafted vintage photography systems.</div>
+        <div class="d-flex gap-4">
+          <a href="#" class="text-cream-muted text-decoration-none">Privacy Policy</a>
+          <a href="#" class="text-cream-muted text-decoration-none">Rental Agreement</a>
+          <a href="dashboard.html" class="text-brass text-decoration-none">Customer Portal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== BOOKING MODAL ==================== -->
+  <div class="modal fade modal-vintage" id="bookingModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="stamp-badge stamp-cherry mb-1">Direct Reservation Concierge</span>
+            <h4 class="modal-title font-display text-cream">Check Availability & Reserve Date</h4>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body p-4" id="bookingModalBody">
+          <form id="quickBookingForm">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label-vintage" for="bookName">Your Full Name / Host</label>
+                <input type="text" id="bookName" class="form-control form-control-vintage" placeholder="e.g., Sarah Jenkins" required>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label-vintage" for="bookEmail">Email Address</label>
+                <input type="email" id="bookEmail" class="form-control form-control-vintage" placeholder="sarah@example.com" required>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label-vintage" for="bookPhone">Phone / WhatsApp Number</label>
+                <input type="tel" id="bookPhone" class="form-control form-control-vintage" placeholder="+91 98765 43210" required>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label-vintage" for="bookCity">Event City</label>
+                <select id="bookCity" class="form-select form-control-vintage" required>
+                  <option value="Mumbai">Mumbai</option>
+                  <option value="Delhi NCR">Delhi NCR</option>
+                  <option value="Bangalore">Bangalore</option>
+                  <option value="Jaipur / Udaipur">Jaipur / Udaipur</option>
+                  <option value="Dubai">Dubai</option>
+                  <option value="Bangkok">Bangkok</option>
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label-vintage" for="bookDate">Event Date</label>
+                <input type="date" id="bookDate" class="form-control form-control-vintage" value="2026-11-28" required>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label-vintage" for="bookPackage">Preferred Experience</label>
+                <select id="bookPackage" class="form-select form-control-vintage" required>
+                  <option value="The Icon (Signature Solid Oak Booth)">The Icon (Signature Solid Oak Booth) — $1,450</option>
+                  <option value="The Flagship Aura (Studio Experience)">The Flagship Aura (Studio Experience) — $1,950</option>
+                  <option value="Instant Camera Guestbook Bar">Instant Camera Guestbook Bar — $450</option>
+                </select>
+              </div>
+
+              <div class="col-12 mt-4">
+                <button type="submit" class="btn btn-vintage-brass w-100 py-3">
+                  <i data-lucide="check-circle" style="width: 18px; height: 18px;"></i> Submit & Create Private Studio Access
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

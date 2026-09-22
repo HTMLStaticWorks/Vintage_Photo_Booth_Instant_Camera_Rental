@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="brassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4AF37" />
+      <stop offset="50%" stop-color="#B58A52" />
+      <stop offset="100%" stop-color="#8C6239" />
+    </linearGradient>
+    <radialGradient id="lensGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#B58A52" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#141216" stop-opacity="0.9"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="64" height="64" rx="14" fill="#141216" />
+  <rect x="2" y="2" width="60" height="60" rx="12" fill="none" stroke="url(#brassGrad)" stroke-width="2" stroke-opacity="0.85" />
+
+  <!-- Camera Body Outline -->
+  <path d="M16 24 C16 21 18 19 21 19 L25 19 L27.5 15.5 C28.2 14.5 29.3 14 30.5 14 L33.5 14 C34.7 14 35.8 14.5 36.5 15.5 L39 19 L43 19 C46 19 48 21 48 24 L48 44 C48 47 46 49 43 49 L21 49 C18 49 16 47 16 44 Z" 
+        fill="none" stroke="url(#brassGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Camera Lens Outer Circle -->
+  <circle cx="32" cy="34" r="9" fill="url(#lensGlow)" stroke="url(#brassGrad)" stroke-width="2" />
+  
+  <!-- Lens Shutter / Center Dot -->
+  <circle cx="32" cy="34" r="3.5" fill="#F4EBDD" />
+  
+  <!-- Viewfinder / Shutter Button -->
+  <circle cx="42" cy="24" r="1.5" fill="#D4AF37" />
+  <line x1="22" y1="16.5" x2="25" y2="16.5" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" />
+</svg>

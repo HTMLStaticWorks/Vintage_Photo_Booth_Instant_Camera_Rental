@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rental Packages & Pricing | ANCO</title>
+  <meta name="description" content="Explore transparent photo booth and instant camera rental packages for weddings, galas, and corporate events. Unlimited prints, bespoke monograms, archival guestbooks, and on-site attendants.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER / NAVIGATION ==================== -->
+  <header class="site-header">
+    <div class="container-fluid px-lg-5">
+      <nav class="navbar navbar-expand-xl navbar-dark p-0">
+        <a class="navbar-brand-logo" href="index.html">
+          <div class="brand-icon-seal">
+            <i data-lucide="camera" style="width: 18px; height: 18px;"></i>
+          </div>
+          <div class="brand-name">ANCO</div>
+        </a>
+
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+          <i data-lucide="menu" style="color: var(--cream);"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMain">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+            <li class="nav-item">
+              <a class="nav-link nav-link-vintage" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-vintage" href="instant-camera.html">Instant Cameras</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-vintage active" href="packages.html">Packages & Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-vintage" href="booths.html">Booth Collection</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-vintage" href="gallery.html">Print Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-vintage" href="about.html">About & Experience</a>
+            </li>
+          </ul>
+
+          <div class="d-flex align-items-center gap-2">
+            <!-- Audio Sound FX Toggle -->
+            <button class="audio-toggle-btn active" id="audioToggle" title="Toggle Vintage Shutter Sound FX">
+              <i data-lucide="volume-2" style="width: 18px; height: 18px;"></i>
+            </button>
+
+            <!-- Theme Mode Toggle (Dark / Warm Vintage Ivory) -->
+            <button class="audio-toggle-btn" id="themeToggle" title="Toggle Light / Dark Mode">
+              <i data-lucide="moon" style="width: 18px; height: 18px;"></i>
+            </button>
+
+            <!-- RTL / LTR Direction Toggle -->
+            <button class="audio-toggle-btn" id="rtlToggle" title="Toggle RTL / LTR Layout">
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;">RTL</span>
+            </button>
+
+            <!-- Login / Client Studio Button -->
+            <a href="login.html" class="audio-toggle-btn" title="Login" aria-label="Login">
+              <i data-lucide="user" style="width: 18px; height: 18px;"></i>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero-vintage" style="min-height: 55vh; padding-top: 8rem; padding-bottom: 2rem;">
+    <div class="container text-center max-w-900 mx-auto">
+      <span class="stamp-badge stamp-brass mb-3">Transparent Investment</span>
+      <h1 class="hero-giant-title mb-3">
+        CURATED <span class="italic-serif">Rental</span> TIERS.
+      </h1>
+      <p class="hero-lead-text mx-auto">
+        Every package includes unlimited physical lab prints, bespoke monogram typography, on-site dapper attendants, and permanent high-resolution cloud vault access.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== MAIN PRICING TIERS ==================== -->
+  <section class="py-5 bg-midnight-surface">
+    <div class="container py-lg-4">
+      <div class="row g-4 justify-content-center">
+        <!-- Tier 1: The Frame -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card-vintage h-100 d-flex flex-column" id="frame">
+            <div class="mb-3">
+              <span class="stamp-badge stamp-peach mb-2">Digital Retro</span>
+              <h3 class="font-display text-cream fs-3">The Frame</h3>
+              <p class="text-cream-muted small">Compact vintage iPad kiosk with analog film filters & instant digital sharing.</p>
+            </div>
+
+            <div class="mb-4 pb-3 border-bottom border-midnight">
+              <span class="font-display display-5 text-cream fw-bold">$850</span>
+              <span class="font-mono-tag text-cream-muted">/ 3 Hours Live</span>
+            </div>
+
+            <ul class="feature-check-list mb-4 flex-grow-1">
+              <li><i data-lucide="check"></i> <span>Vintage wood tabletop or slim tripod kiosk</span></li>
+              <li><i data-lucide="check"></i> <span>Custom monogram digital overlay</span></li>
+              <li><i data-lucide="check"></i> <span>Instant AirDrop, QR Code, SMS & Email sharing</span></li>
+              <li><i data-lucide="check"></i> <span>Curated 35mm film grain & noir filters</span></li>
+              <li><i data-lucide="check"></i> <span>High-res online gallery archive</span></li>
+              <li><i data-lucide="check"></i> <span>1 Dapper booth attendant</span></li>
+            </ul>
+
+            <button class="btn btn-vintage-outline w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">
+              Reserve The Frame
+            </button>
+          </div>
+        </div>
+
+        <!-- Tier 2: The Icon (Featured) -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card-vintage card-pricing-featured h-100 d-flex flex-column" id="icon">
+            <div class="mb-3">
+              <span class="stamp-badge stamp-cherry mb-2">Signature Analog Experience</span>
+              <h3 class="font-display text-cream fs-3">The Icon</h3>
+              <p class="text-cream-soft small">Solid dark oak wood cabin with lab-grade dye-sublimation print chute.</p>
+            </div>
+
+            <div class="mb-4 pb-3 border-bottom border-midnight">
+              <span class="font-display display-5 text-brass fw-bold">$1,450</span>
+              <span class="font-mono-tag text-cream-muted">/ 3 Hours Live</span>
+            </div>
+
+            <ul class="feature-check-list mb-4 flex-grow-1">
+              <li><i data-lucide="check"></i> <span><strong>Unlimited 2×6 or 4×6 lab prints</strong> (7.2s speed)</span></li>
+              <li><i data-lucide="check"></i> <span>Handcrafted 1968 Oak Wood Cabin Booth</span></li>
+              <li><i data-lucide="check"></i> <span>Choice of Premium French Velvet Backdrop</span></li>
+              <li><i data-lucide="check"></i> <span>Custom Monogram & Rubber Stamp design</span></li>
+              <li><i data-lucide="check"></i> <span>Curated vintage props & wooden table crate</span></li>
+              <li><i data-lucide="check"></i> <span>2 Dedicated uniformed booth attendants</span></li>
+              <li><i data-lucide="check"></i> <span>Live SMS/AirDrop + Archival cloud vault</span></li>
+            </ul>
+
+            <button class="btn btn-vintage-brass w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">
+              Reserve The Icon Booth
+            </button>
+          </div>
+        </div>
+
+        <!-- Tier 3: The Flagship Aura -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card-vintage h-100 d-flex flex-column" id="aura">
+            <div class="mb-3">
+              <span class="stamp-badge stamp-brass mb-2">High Fashion Studio</span>
+              <h3 class="font-display text-cream fs-3">The Flagship Aura</h3>
+              <p class="text-cream-muted small">Full-scale portrait studio with beauty lighting, leather guestbook & custom backdrops.</p>
+            </div>
+
+            <div class="mb-4 pb-3 border-bottom border-midnight">
+              <span class="font-display display-5 text-cream fw-bold">$1,950</span>
+              <span class="font-mono-tag text-cream-muted">/ 4 Hours Live</span>
+            </div>
+
+            <ul class="feature-check-list mb-4 flex-grow-1">
+              <li><i data-lucide="check"></i> <span><strong>4 Hours of Live Operation</strong></span></li>
+              <li><i data-lucide="check"></i> <span>Unlimited 4×6 heavyweight studio portrait prints</span></li>
+              <li><i data-lucide="check"></i> <span>Foil-embossed archival leather guestbook station</span></li>
+              <li><i data-lucide="check"></i> <span>Magnetic sleeves & photo keychains for all guests</span></li>
+              <li><i data-lucide="check"></i> <span>Custom wood-carved or floral backdrop installation</span></li>
+              <li><i data-lucide="check"></i> <span>Studio beauty dish lighting & live projection feed</span></li>
+              <li><i data-lucide="check"></i> <span>2 Lead attendants + 1 Guestbook concierge</span></li>
+            </ul>
+
+            <button class="btn btn-vintage-outline w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">
+              Reserve Flagship Aura
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== INTERACTIVE QUOTE ESTIMATOR ==================== -->
+  <section id="quoteEstimator" class="py-5 bg-midnight">
+    <div class="container py-lg-4">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7">
+          <span class="stamp-badge stamp-cherry mb-2">Bespoke Quote Calculator</span>
+          <h2 class="font-display display-5 text-cream mb-3">Customize Your Package & Add-Ons</h2>
+          <p class="text-cream-muted mb-4">Select your core experience and toggle optional keepsake add-ons to see an instantaneous investment breakdown.</p>
+
+          <div class="row g-3 mb-4">
+            <div class="col-md-6">
+              <label class="form-label-vintage" for="calcBasePackage">Select Core Experience</label>
+              <select id="calcBasePackage" class="form-select form-control-vintage">
+                <option value="1450">The Icon (Signature Oak Booth) — $1,450</option>
+                <option value="1950">The Flagship Aura (Studio Experience) — $1,950</option>
+                <option value="850">The Frame (Digital Retro Kiosk) — $850</option>
+                <option value="450">Instant Camera Guestbook Bar — $450</option>
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label-vintage" for="calcExtraHours">Additional Operating Hours</label>
+              <select id="calcExtraHours" class="form-select form-control-vintage">
+                <option value="0">Standard Duration Included</option>
+                <option value="1">+1 Extra Hour (+$175)</option>
+                <option value="2">+2 Extra Hours (+$350)</option>
+                <option value="3">+3 Extra Hours (+$500)</option>
+              </select>
+            </div>
+          </div>
+
+          <label class="form-label-vintage d-block mb-3">Keepsakes & Upgrades</label>
+          <div class="d-flex flex-column gap-3 mb-4">
+            <div class="form-check">
+              <input class="form-check-input bg-midnight border-brass" type="checkbox" id="addonGuestAlbum" checked>
+              <label class="form-check-label text-cream-soft small" for="addonGuestAlbum">
+                Handmade Leather Guestbook Station + Metallic Pens & Tape (+$120)
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input bg-midnight border-brass" type="checkbox" id="addonMagnets">
+              <label class="form-check-label text-cream-soft small" for="addonMagnets">
+                Acrylic Magnet Sleeves (150 Pcs for guest favors) (+$95)
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input bg-midnight border-brass" type="checkbox" id="addonAudioGuestbook">
+              <label class="form-check-label text-cream-soft small" for="addonAudioGuestbook">
+                Vintage Rotary Telephone Audio Guestbook with audio vinyl pressing (+$250)
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input bg-midnight border-brass" type="checkbox" id="addonRoamingPolaroid">
+              <label class="form-check-label text-cream-soft small" for="addonRoamingPolaroid">
+                Roaming Polaroid Butler with 100 Instant Film Shots (+$350)
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="card-vintage p-4 p-lg-5 border-brass" style="border-width: 2px;">
+            <span class="font-mono-tag text-brass d-block mb-2">INVESTMENT SUMMARY</span>
+            
+            <div class="d-flex justify-content-between py-2 border-bottom border-midnight">
+              <span class="text-cream-muted small">Base Package</span>
+              <span class="text-cream fw-bold" id="quoteBasePrice">$1,450</span>
+            </div>
+
+            <div class="d-flex justify-content-between py-2 border-bottom border-midnight">
+              <span class="text-cream-muted small">Add-ons & Upgrades</span>
+              <span class="text-cream fw-bold" id="quoteAddonsPrice">$120</span>
+            </div>
+
+            <div class="d-flex justify-content-between py-3 border-bottom border-midnight">
+              <span class="font-display fs-5 text-cream">Grand Total</span>
+              <span class="font-display display-6 text-brass fw-bold" id="quoteTotalPrice">$1,570</span>
+            </div>
+
+            <div class="d-flex justify-content-between py-2 mb-4">
+              <span class="font-mono-tag text-peach">Required Deposit (30%)</span>
+              <span class="font-mono-tag text-peach fw-bold" id="quoteDepositPrice">$471</span>
+            </div>
+
+            <button class="btn btn-vintage-brass w-100 py-3" data-bs-toggle="modal" data-bs-target="#bookingModal">
+              <i data-lucide="check" style="width: 16px; height: 16px;"></i> Lock In This Quote
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== DETAILED FEATURE MATRIX ==================== -->
+  <section class="py-5 bg-midnight-surface">
+    <div class="container py-lg-4">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="stamp-badge stamp-brass mb-2">Comparison</span>
+        <h2 class="font-display display-5 text-cream">Side-by-Side Breakdown</h2>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-dark table-striped align-middle" style="background: var(--midnight-surface); border-color: rgba(244, 235, 221, 0.1);">
+          <thead>
+            <tr class="font-mono-tag text-brass" style="font-size: 0.85rem; border-bottom: 2px solid var(--brass);">
+              <th style="width: 35%;">Feature</th>
+              <th style="width: 20%;">The Frame</th>
+              <th style="width: 25%;">The Icon (Signature)</th>
+              <th style="width: 20%;">The Flagship Aura</th>
+            </tr>
+          </thead>
+          <tbody class="font-sans text-cream-soft" style="font-size: 0.92rem;">
+            <tr>
+              <td><strong>Operating Duration</strong></td>
+              <td>3 Hours</td>
+              <td>3 Hours</td>
+              <td>4 Hours</td>
+            </tr>
+            <tr>
+              <td><strong>Physical Prints</strong></td>
+              <td class="text-muted">Digital Only</td>
+              <td><span class="text-brass">Unlimited 2×6 or 4×6</span></td>
+              <td><span class="text-brass">Unlimited Lab Quality</span></td>
+            </tr>
+            <tr>
+              <td><strong>Hardware & Enclosure</strong></td>
+              <td>Vintage iPad Kiosk</td>
+              <td>Solid Oak Wood Booth</td>
+              <td>Open Portrait Lounge</td>
+            </tr>
+            <tr>
+              <td><strong>Camera & Optics</strong></td>
+              <td>4K Ultra Sensor</td>
+              <td>DSLR + 35mm Prime</td>
+              <td>Full-Frame DSLR + Beauty Dish</td>
+            </tr>
+            <tr>
+              <td><strong>Custom Monogram Template</strong></td>
+              <td><i data-lucide="check" class="text-brass"></i></td>
+              <td><i data-lucide="check" class="text-brass"></i></td>
+              <td><i data-lucide="check" class="text-brass"></i></td>
+            </tr>
+            <tr>
+              <td><strong>Leather Guest Album Station</strong></td>
+              <td class="text-muted">Optional Add-on</td>
+              <td class="text-muted">Optional Add-on</td>
+              <td><i data-lucide="check" class="text-brass"></i> Included</td>
+            </tr>
+            <tr>
+              <td><strong>Dedicated Uniformed Staff</strong></td>
+              <td>1 Attendant</td>
+              <td>2 Attendants</td>
+              <td>3 Attendants</td>
+            </tr>
+            <tr>
+              <td><strong>High-Res Cloud Vault & AirDrop</strong></td>
+              <td><i data-lucide="check" class="text-brass"></i></td>
+              <td><i data-lucide="check" class="text-brass"></i></td>
+              <td><i data-lucide="check" class="text-brass"></i></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <div class="brand-icon-seal">
+              <i data-lucide="camera" style="width: 18px; height: 18px;"></i>
+            </div>
+            <div class="font-display fw-bold fs-4 text-cream">ANCO</div>
+          </div>
+          <p class="text-cream-muted small mb-3">
+            Curators of tangible nostalgia. Providing handcrafted vintage photo booths, instant Polaroid bars, and luxury guestbook keepsakes across India, UAE, and Southeast Asia.
+          </p>
+          <div class="font-mono-tag text-brass small mb-3">
+            “MAKE IT. SNAP IT. KEEP IT.”
+          </div>
+
+          <!-- Social Media Icons -->
+          <div class="footer-social-links">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="vintage-social-icon" title="Instagram" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="vintage-social-icon" title="Facebook" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="vintage-social-icon" title="LinkedIn" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect width="4" height="12" x="2" y="9"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="https://www.x.com" target="_blank" rel="noopener noreferrer" class="vintage-social-icon" title="X (Twitter)" aria-label="X (Twitter)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768M20 4l-6.768 6.768"></path>
+              </svg>
+            </a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="vintage-social-icon" title="YouTube" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path>
+                <polygon points="10 15 15 12 10 9 10 15" fill="currentColor"></polygon>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <div class="font-mono-tag text-cream mb-3">EXPLORE</div>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="instant-camera.html" class="footer-link">Instant Cameras</a></li>
+            <li><a href="packages.html" class="footer-link">Packages & Pricing</a></li>
+            <li><a href="booths.html" class="footer-link">Booth Collection</a></li>
+            <li><a href="gallery.html" class="footer-link">Print Gallery</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <div class="font-mono-tag text-cream mb-3">EXPERIENCE</div>
+          <ul class="list-unstyled">
+            <li><a href="about.html" class="footer-link">Brand Philosophy</a></li>
+            <li><a href="about.html#how-it-works" class="footer-link">How Rental Works</a></li>
+            <li><a href="about.html#faqs" class="footer-link">Frequently Asked</a></li>
+            <li><a href="login.html" class="footer-link">Customer Studio</a></li>
+            <li><a href="dashboard.html" class="footer-link">Live Portal Demo</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="font-mono-tag text-cream mb-3">STUDIO LOCATIONS</div>
+          <p class="text-cream-muted small mb-2"><strong class="text-cream">Mumbai Studio:</strong> Bandra West, Mumbai 400050</p>
+          <p class="text-cream-muted small mb-2"><strong class="text-cream">Delhi Studio:</strong> Mehrauli Heritage Quarter, New Delhi</p>
+          <p class="text-cream-muted small mb-3"><strong class="text-cream">Dubai Concierge:</strong> Downtown Dubai, UAE</p>
+          <div class="font-mono-tag text-brass small">DIRECT: +91 99672 19574 • HELLO@ANCO.COM</div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <div>&copy; 2026 ANCO. All rights reserved. Handcrafted vintage photography systems.</div>
+        <div class="d-flex gap-4">
+          <a href="#" class="text-cream-muted text-decoration-none">Privacy Policy</a>
+          <a href="#" class="text-cream-muted text-decoration-none">Rental Agreement</a>
+          <a href="dashboard.html" class="text-brass text-decoration-none">Customer Portal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== BOOKING MODAL ==================== -->
+  <div class="modal fade modal-vintage" id="bookingModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="stamp-badge stamp-cherry mb-1">Direct Reservation Concierge</span>
+            <h4 class="modal-title font-display text-cream">Check Availability & Reserve Package</h4>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body p-4" id="bookingModalBody">
+          <form id="quickBookingForm">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label-vintage" for="bookName">Your Full Name / Event Host</label>
+                <input type="text" id="bookName" class="form-control form-control-vintage" placeholder="e.g., Sarah Jenkins" required>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label-vintage" for="bookEmail">Email Address</label>
+                <input type="email" id="bookEmail" class="form-control form-control-vintage" placeholder="sarah@example.com" required>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label-vintage" for="bookPhone">Phone / WhatsApp Number</label>
+                <input type="tel" id="bookPhone" class="form-control form-control-vintage" placeholder="+91 98765 43210" required>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label-vintage" for="bookCity">Event City / Destination</label>
+                <select id="bookCity" class="form-select form-control-vintage" required>
+                  <option value="Mumbai">Mumbai</option>
+                  <option value="Delhi NCR">Delhi NCR</option>
+                  <option value="Bangalore">Bangalore</option>
+                  <option value="Jaipur / Udaipur">Jaipur / Udaipur</option>
+                  <option value="Goa">Goa</option>
+                  <option value="Dubai / Abu Dhabi">Dubai / Abu Dhabi</option>
+                  <option value="Bangkok / Phuket">Bangkok / Phuket</option>
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label-vintage" for="bookDate">Event Date</label>
+                <input type="date" id="bookDate" class="form-control form-control-vintage" value="2026-11-28" required>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label-vintage" for="bookPackage">Preferred Experience</label>
+                <select id="bookPackage" class="form-select form-control-vintage" required>
+                  <option value="The Icon (Signature Solid Oak Booth)">The Icon (Signature Solid Oak Booth) — $1,450</option>
+                  <option value="The Flagship Aura (Studio Experience)">The Flagship Aura (Studio Experience) — $1,950</option>
+                  <option value="The Frame (Digital Vintage Retro)">The Frame (Digital Vintage Retro) — $850</option>
+                  <option value="Instant Camera Guestbook Bar">Instant Camera Guestbook Bar — $450</option>
+                </select>
+              </div>
+
+              <div class="col-12 mt-4">
+                <button type="submit" class="btn btn-vintage-brass w-100 py-3">
+                  <i data-lucide="check-circle" style="width: 18px; height: 18px;"></i> Submit & Create Private Studio Access
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+  <script src="js/packages.js"></script>
+</body>
+</html>
