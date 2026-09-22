@@ -21,7 +21,7 @@ function initGalleryFilter() {
       galleryItems.forEach(item => {
         const cat = item.getAttribute('data-category');
         if (filter === 'all' || cat === filter || (cat && cat.includes(filter))) {
-          item.style.display = 'block';
+          item.style.display = 'flex';
         } else {
           item.style.display = 'none';
         }
