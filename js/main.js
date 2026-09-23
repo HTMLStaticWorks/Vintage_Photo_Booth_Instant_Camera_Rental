@@ -74,17 +74,20 @@ const soundEngine = new VintageSoundEngine();
 
 // Document Ready Initialization
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize Lucide icons
-  if (window.lucide) {
-    window.lucide.createIcons();
-  }
-
   // Theme Toggle Support (Dark / Warm Vintage Ivory)
   const themeToggle = document.getElementById('themeToggle');
   const savedTheme = localStorage.getItem('analogue_theme') || 'dark';
   if (savedTheme === 'light') {
     document.documentElement.setAttribute('data-theme', 'light');
     if (themeToggle) themeToggle.innerHTML = '<i data-lucide="sun" style="width: 18px; height: 18px;"></i>';
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+    if (themeToggle) themeToggle.innerHTML = '<i data-lucide="moon" style="width: 18px; height: 18px;"></i>';
+  }
+
+  // Initialize Lucide icons
+  if (window.lucide) {
+    window.lucide.createIcons();
   }
 
   if (themeToggle) {
@@ -135,6 +138,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Password / PIN Visibility Eye Toggles
+  initPasswordToggles();
+
   // Attach shutter sound to trigger elements
   document.querySelectorAll('.play-shutter-sound, .btn-vintage-primary, .btn-vintage-brass').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -179,6 +185,28 @@ document.addEventListener('DOMContentLoaded', () => {
   // Booking Modal Form Handler
   initBookingModal();
 });
+
+// Password & PIN Visibility Toggle Handler
+function initPasswordToggles() {
+  document.querySelectorAll('.password-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = btn.getAttribute('data-target');
+      const input = document.getElementById(targetId);
+      if (!input) return;
+
+      const isPassword = input.getAttribute('type') === 'password';
+      input.setAttribute('type', isPassword ? 'text' : 'password');
+      
+      btn.innerHTML = isPassword 
+        ? '<i data-lucide="eye-off" style="width: 16px; height: 16px;"></i>' 
+        : '<i data-lucide="eye" style="width: 16px; height: 16px;"></i>';
+      
+      if (window.lucide) window.lucide.createIcons();
+      if (window.soundEngine) window.soundEngine.playShutter();
+    });
+  });
+}
 
 // Interactive Booth Switcher Logic
 const boothData = {

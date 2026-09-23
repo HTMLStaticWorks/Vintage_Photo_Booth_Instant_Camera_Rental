@@ -437,23 +437,42 @@ h1, h2, h3, h4, .font-display {
   display: block;
 }
 
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+@media (min-width: 1200px) {
+  .navbar-nav {
+    gap: 0.65rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .navbar-nav {
+    gap: 1.25rem;
+  }
+}
+
 .nav-link-vintage {
   font-family: var(--font-sans);
   font-weight: 500;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   color: var(--cream-soft) !important;
-  padding: 0.5rem 1rem !important;
+  padding: 0.5rem 0.85rem !important;
   position: relative;
   transition: color var(--trans-fast);
   letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .nav-link-vintage::after {
   content: "";
   position: absolute;
   bottom: 0;
-  left: 1rem;
-  right: 1rem;
+  left: 0.85rem;
+  right: 0.85rem;
   height: 2px;
   background: var(--brass);
   transform: scaleX(0);
@@ -465,9 +484,13 @@ h1, h2, h3, h4, .font-display {
   color: var(--brass-light) !important;
 }
 
+[data-theme="light"] .nav-link-vintage {
+  color: #4A433A !important;
+}
+
 [data-theme="light"] .nav-link-vintage:hover,
 [data-theme="light"] .nav-link-vintage.active {
-  color: var(--brass) !important;
+  color: #845B26 !important;
 }
 
 .nav-link-vintage:hover::after,
@@ -493,8 +516,8 @@ h1, h2, h3, h4, .font-display {
 }
 
 [data-theme="light"] .audio-toggle-btn {
-  background: rgba(27, 24, 30, 0.06);
-  border-color: rgba(27, 24, 30, 0.18);
+  background: rgba(27, 24, 30, 0.08) !important;
+  border-color: rgba(27, 24, 30, 0.25) !important;
   color: #1B181E !important;
 }
 
@@ -504,6 +527,13 @@ h1, h2, h3, h4, .font-display {
   display: block;
 }
 
+[data-theme="light"] .audio-toggle-btn svg,
+[data-theme="light"] .audio-toggle-btn i,
+[data-theme="light"] .audio-toggle-btn span {
+  color: #1B181E !important;
+  stroke: #1B181E !important;
+}
+
 .audio-toggle-btn.active {
   background: rgba(181, 138, 82, 0.2);
   border-color: var(--brass);
@@ -511,9 +541,16 @@ h1, h2, h3, h4, .font-display {
 }
 
 [data-theme="light"] .audio-toggle-btn.active {
-  background: rgba(142, 104, 56, 0.15);
-  border-color: var(--brass);
+  background: rgba(142, 104, 56, 0.18) !important;
+  border-color: #845B26 !important;
   color: #845B26 !important;
+}
+
+[data-theme="light"] .audio-toggle-btn.active svg,
+[data-theme="light"] .audio-toggle-btn.active i,
+[data-theme="light"] .audio-toggle-btn.active span {
+  color: #845B26 !important;
+  stroke: #845B26 !important;
 }
 
 .audio-toggle-btn:hover {
@@ -525,8 +562,70 @@ h1, h2, h3, h4, .font-display {
 
 [data-theme="light"] .audio-toggle-btn:hover {
   color: #1B181E !important;
+  border-color: #845B26 !important;
+  background: rgba(142, 104, 56, 0.2) !important;
+}
+
+/* Password Visibility Eye Toggle Button */
+.password-toggle-btn {
+  background: var(--midnight-elevated);
+  border: 1px solid rgba(244, 235, 221, 0.15);
+  border-left: none;
+  color: var(--brass);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 0.95rem;
+  border-top-right-radius: var(--radius-sm) !important;
+  border-bottom-right-radius: var(--radius-sm) !important;
+  cursor: pointer;
+  transition: all var(--trans-fast);
+}
+
+.password-toggle-btn:hover {
+  color: var(--brass-light);
+  background: rgba(181, 138, 82, 0.15);
+}
+
+[data-theme="light"] .password-toggle-btn {
+  background: #FAF6EE !important;
+  border-color: rgba(27, 24, 30, 0.18) !important;
+  border-left: none !important;
+  color: #845B26 !important;
+}
+
+[data-theme="light"] .password-toggle-btn:hover {
+  background: #EDE3D2 !important;
+  color: #1B181E !important;
+}
+
+/* Form Check / Checkbox Styling */
+.form-check-input {
+  background-color: var(--midnight-elevated);
+  border-color: rgba(244, 235, 221, 0.3);
+  cursor: pointer;
+  width: 1.15em;
+  height: 1.15em;
+}
+
+.form-check-input:checked {
+  background-color: var(--brass);
   border-color: var(--brass);
-  background: rgba(142, 104, 56, 0.2);
+}
+
+.form-check-input:focus {
+  border-color: var(--brass);
+  box-shadow: 0 0 0 0.25rem rgba(181, 138, 82, 0.25);
+}
+
+[data-theme="light"] .form-check-input {
+  background-color: #FAF6EE;
+  border-color: rgba(27, 24, 30, 0.3);
+}
+
+[data-theme="light"] .form-check-input:checked {
+  background-color: #845B26;
+  border-color: #845B26;
 }
 
 /* Vintage Buttons */

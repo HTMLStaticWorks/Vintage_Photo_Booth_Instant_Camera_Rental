@@ -111,6 +111,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
 /* Dashboard Responsiveness & Equalization */
@@ -147,6 +153,9 @@
     padding: 1rem 1.25rem;
     flex-wrap: wrap;
     gap: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
   .dashboard-user-profile {
     display: none;
@@ -459,8 +468,9 @@
 }
 
 [data-theme="light"] .dashboard-topbar {
-  background-color: #EDE3D2 !important;
+  background-color: rgba(237, 227, 210, 0.96) !important;
   border-bottom-color: rgba(27, 24, 30, 0.1) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
 }
 
 [data-theme="light"] .dashboard-topbar h1 {
@@ -468,19 +478,27 @@
 }
 
 [data-theme="light"] .dashboard-topbar .audio-toggle-btn {
-  background: rgba(27, 24, 30, 0.06) !important;
-  border-color: rgba(27, 24, 30, 0.18) !important;
+  background: rgba(27, 24, 30, 0.08) !important;
+  border-color: rgba(27, 24, 30, 0.25) !important;
   color: #1B181E !important;
 }
 
+[data-theme="light"] .dashboard-topbar .audio-toggle-btn svg,
 [data-theme="light"] .dashboard-topbar .audio-toggle-btn i,
 [data-theme="light"] .dashboard-topbar .audio-toggle-btn span {
   color: #1B181E !important;
+  stroke: #1B181E !important;
 }
 
 [data-theme="light"] .dashboard-topbar .audio-toggle-btn:hover {
-  background: rgba(132, 91, 38, 0.15) !important;
+  background: rgba(132, 91, 38, 0.18) !important;
   border-color: #845B26 !important;
   color: #845B26 !important;
+}
+
+[data-theme="light"] .dashboard-topbar .audio-toggle-btn:hover svg,
+[data-theme="light"] .dashboard-topbar .audio-toggle-btn:hover i {
+  color: #845B26 !important;
+  stroke: #845B26 !important;
 }
 

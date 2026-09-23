@@ -91,7 +91,10 @@
             <span class="input-group-text bg-midnight border-midnight text-brass" style="border-right: none;">
               <i data-lucide="lock" style="width: 16px; height: 16px;"></i>
             </span>
-            <input type="password" id="regPin" class="form-control form-control-vintage" placeholder="e.g. 1968" required style="border-left: none;">
+            <input type="password" id="regPin" class="form-control form-control-vintage" placeholder="e.g. 1968" required style="border-left: none; border-right: none;">
+            <button class="btn btn-outline-vintage-eye password-toggle-btn" type="button" data-target="regPin" title="Toggle PIN visibility" aria-label="Toggle PIN visibility">
+              <i data-lucide="eye" style="width: 16px; height: 16px;"></i>
+            </button>
           </div>
         </div>
 
@@ -103,6 +106,14 @@
             <option value="The Frame (Digital Retro)">The Frame (Digital Vintage Retro) — $850</option>
             <option value="Instant Camera Guestbook Bar">Instant Camera Guestbook Bar — $450</option>
           </select>
+        </div>
+
+        <!-- Terms & Conditions and Privacy Policy Agreement Checkbox -->
+        <div class="form-check text-start mb-4">
+          <input class="form-check-input" type="checkbox" id="termsCheck" required>
+          <label class="form-check-label text-cream-soft small" for="termsCheck" style="font-size: 0.82rem; line-height: 1.5; cursor: pointer;">
+            I agree to the <a href="#" class="text-brass text-decoration-none fw-bold" onclick="alert('ANALOGUE & CO. Terms & Conditions:\n\n1. All bookings require a 50% deposit to secure your event date.\n2. Archival prints and film chemistry are handled with museum-grade preservation standards.\n3. Cancellations within 30 days are subject to standard rescheduling policies.'); return false;">Terms &amp; Conditions</a> and <a href="#" class="text-brass text-decoration-none fw-bold" onclick="alert('ANALOGUE & CO. Privacy Policy:\n\n1. Your event gallery and high-resolution guest photos are private and encrypted.\n2. We will never sell, rent, or distribute your email or guest images to third parties.'); return false;">Privacy Policy</a>.
+          </label>
         </div>
 
         <button type="submit" class="btn btn-vintage-brass w-100 py-3 mb-3">
