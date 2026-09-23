@@ -241,37 +241,48 @@
   font-weight: 700;
 }
 
-/* Timeline Stepper on Mobile (<= 768px) */
-@media (max-width: 768px) {
+/* Timeline Stepper on Mobile & Tablet (<= 991px) */
+@media (max-width: 991px) {
   .timeline-stepper {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.25rem;
-    padding-left: 1rem;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1.25rem !important;
+    padding-left: 0.5rem !important;
+    margin: 1.5rem 0 !important;
   }
   .timeline-stepper::before {
-    left: 28px;
-    top: 15px;
-    bottom: 15px;
-    width: 2px;
-    height: auto;
-    right: auto;
+    left: 20px !important;
+    top: 10px !important;
+    bottom: 10px !important;
+    width: 2px !important;
+    height: calc(100% - 20px) !important;
+    right: auto !important;
   }
   .timeline-progress-bar {
-    left: 28px;
-    top: 15px;
-    width: 2px;
-    height: 50%;
+    left: 20px !important;
+    top: 10px !important;
+    width: 2px !important;
+    height: 50% !important;
+    max-width: none !important;
+    right: auto !important;
+    box-shadow: none !important;
   }
   .step-item {
-    flex-direction: row;
-    text-align: left;
-    gap: 1rem;
-    width: 100%;
-    padding: 0;
+    flex-direction: row !important;
+    align-items: center !important;
+    text-align: left !important;
+    gap: 1rem !important;
+    width: 100% !important;
+    padding: 0 !important;
   }
   .step-node {
-    margin-bottom: 0;
+    width: 32px !important;
+    height: 32px !important;
+    margin-bottom: 0 !important;
+    font-size: 0.75rem !important;
+  }
+  .step-label {
+    font-size: 0.85rem !important;
   }
 }
 
@@ -414,5 +425,62 @@
 
 #vaultTab .photo-meta {
   margin-top: auto;
+}
+
+/* Light Mode Overrides for Dashboard */
+[data-theme="light"] .dashboard-layout {
+  background-color: #FAF6EE !important;
+  color: #1B181E !important;
+}
+
+[data-theme="light"] .dashboard-sidebar {
+  background-color: #EDE3D2 !important;
+  border-right-color: rgba(27, 24, 30, 0.1) !important;
+}
+
+[data-theme="light"] .dashboard-brand {
+  border-bottom-color: rgba(27, 24, 30, 0.1) !important;
+}
+
+[data-theme="light"] .dashboard-nav-item a {
+  color: #5C5449 !important;
+}
+
+[data-theme="light"] .dashboard-nav-item a:hover {
+  background: rgba(27, 24, 30, 0.05) !important;
+  color: #1B181E !important;
+}
+
+[data-theme="light"] .dashboard-nav-item.active a,
+[data-theme="light"] .dashboard-nav-item a.active {
+  background: #FAF6EE !important;
+  color: #845B26 !important;
+  border-left: 3px solid #845B26 !important;
+}
+
+[data-theme="light"] .dashboard-topbar {
+  background-color: #EDE3D2 !important;
+  border-bottom-color: rgba(27, 24, 30, 0.1) !important;
+}
+
+[data-theme="light"] .dashboard-topbar h1 {
+  color: #1B181E !important;
+}
+
+[data-theme="light"] .dashboard-topbar .audio-toggle-btn {
+  background: rgba(27, 24, 30, 0.06) !important;
+  border-color: rgba(27, 24, 30, 0.18) !important;
+  color: #1B181E !important;
+}
+
+[data-theme="light"] .dashboard-topbar .audio-toggle-btn i,
+[data-theme="light"] .dashboard-topbar .audio-toggle-btn span {
+  color: #1B181E !important;
+}
+
+[data-theme="light"] .dashboard-topbar .audio-toggle-btn:hover {
+  background: rgba(132, 91, 38, 0.15) !important;
+  border-color: #845B26 !important;
+  color: #845B26 !important;
 }
 

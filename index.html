@@ -55,6 +55,9 @@
             <li class="nav-item">
               <a class="nav-link nav-link-vintage" href="about.html">About & Experience</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-vintage" href="dashboard.html">Dashboard</a>
+            </li>
           </ul>
 
           <div class="d-flex align-items-center gap-2">
@@ -76,6 +79,12 @@
             <!-- Login / Client Studio Button -->
             <a href="login.html" class="audio-toggle-btn" title="Login" aria-label="Login">
               <i data-lucide="user" style="width: 18px; height: 18px;"></i>
+            </a>
+
+            <!-- Dedicated Dashboard Button -->
+            <a href="dashboard.html" class="btn btn-sm btn-vintage-brass d-none d-xl-inline-flex" title="Client Dashboard">
+              <i data-lucide="layout-dashboard" style="width: 14px; height: 14px;"></i>
+              <span>Dashboard</span>
             </a>
           </div>
         </div>
@@ -521,15 +530,15 @@
 
   <!-- ==================== FOOTER ==================== -->
   <footer class="site-footer">
-    <div class="container">
+    <div class="container-fluid px-lg-5">
       <div class="row g-5">
         <div class="col-lg-4">
-          <div class="d-flex align-items-center gap-2 mb-3">
+          <a class="navbar-brand-logo mb-3" href="index.html" style="display: inline-flex;">
             <div class="brand-icon-seal">
               <i data-lucide="camera" style="width: 18px; height: 18px;"></i>
             </div>
-            <div class="font-display fw-bold fs-4 text-cream">ANCO</div>
-          </div>
+            <div class="brand-name">ANCO</div>
+          </a>
           <p class="text-cream-muted small mb-3">
             Curators of tangible nostalgia. Providing handcrafted vintage photo booths, instant Polaroid bars, and luxury guestbook keepsakes across India, UAE, and Southeast Asia.
           </p>

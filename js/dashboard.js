@@ -1,15 +1,119 @@
-/**
- * Customer Dashboard / Private Booking Studio Logic
- * Handles Event Countdown, Timeline Status, Backdrop Swatches, Strip Template Live Sync, and Invoices
- */
-
 document.addEventListener('DOMContentLoaded', () => {
+  initDashboardTabs();
   initDashboardState();
   initCountdown();
   initBackdropSelector();
   initTemplateCustomizer();
   initPaymentSimulator();
+  initDashboardActionLinks();
 });
+
+// Sidebar & Topbar Tab Navigation Handler
+function initDashboardTabs() {
+  const switchTab = (targetHash) => {
+    if (!targetHash || !targetHash.startsWith('#')) return;
+    
+    // Remove active class from all nav items
+    document.querySelectorAll('.dashboard-nav-item').forEach(item => {
+      item.classList.remove('active');
+    });
+    
+    // Find corresponding sidebar item and activate it
+    const matchingSidebarLink = document.querySelector(`.dashboard-nav-item a[href="${targetHash}"], .dashboard-nav-item a[data-tab-target="${targetHash}"]`);
+    if (matchingSidebarLink && matchingSidebarLink.parentElement) {
+      matchingSidebarLink.parentElement.classList.add('active');
+    }
+
+    // Switch tab panes
+    const allPanes = document.querySelectorAll('.dashboard-content-body .tab-pane');
+    allPanes.forEach(pane => {
+      pane.classList.remove('show', 'active');
+    });
+
+    const targetPane = document.querySelector(targetHash);
+    if (targetPane) {
+      targetPane.classList.add('show', 'active');
+    }
+
+    if (window.lucide) window.lucide.createIcons();
+    if (window.soundEngine) window.soundEngine.playShutter();
+  };
+
+  // Attach to all tab links
+  const tabLinks = document.querySelectorAll('.dashboard-nav-item a, a[data-bs-toggle="tab"], .dashboard-tab-link');
+  tabLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const targetHash = link.getAttribute('href') || link.getAttribute('data-tab-target');
+      switchTab(targetHash);
+      if (history.pushState) {
+        history.pushState(null, null, targetHash);
+      }
+    });
+  });
+
+  // Attach to li container for easy clicking
+  document.querySelectorAll('.dashboard-nav-item').forEach(item => {
+    item.addEventListener('click', (e) => {
+      const link = item.querySelector('a');
+      if (link && e.target !== link && !link.contains(e.target)) {
+        link.click();
+      }
+    });
+  });
+
+  // Check URL hash on initial load
+  if (window.location.hash) {
+    switchTab(window.location.hash);
+  }
+}
+
+function initDashboardActionLinks() {
+  // Share Vault Link
+  const shareVaultBtn = document.getElementById('shareVaultBtn');
+  if (shareVaultBtn) {
+    shareVaultBtn.addEventListener('click', () => {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(window.location.href);
+      }
+      showNotification("Guest photo vault link copied to clipboard!");
+      if (window.soundEngine) window.soundEngine.playShutter();
+    });
+  }
+
+  // Copy Booking Ref PIN
+  const copyPinBtn = document.getElementById('portalBookingRef');
+  if (copyPinBtn) {
+    copyPinBtn.style.cursor = 'pointer';
+    copyPinBtn.addEventListener('click', () => {
+      const bookingId = document.querySelector('.bind-booking-id')?.textContent || 'ANL-894120';
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(bookingId);
+      }
+      showNotification(`Passcode copied: ${bookingId}`);
+    });
+  }
+
+  // Download All Scans Button
+  const downloadAllBtn = document.getElementById('downloadAllScansBtn');
+  if (downloadAllBtn) {
+    downloadAllBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      showNotification("Preparing ZIP archive of 342 high-resolution scans (1.4 GB)...");
+      if (window.soundEngine) window.soundEngine.playShutter();
+    });
+  }
+
+  // Individual photo card download links
+  const scanDownloadLinks = document.querySelectorAll('.download-scan-link');
+  scanDownloadLinks.forEach((link, idx) => {
+    link.addEventListener('click', () => {
+      showNotification(`Downloading scan file #${String(idx + 1).padStart(3, '0')}...`);
+      if (window.soundEngine) window.soundEngine.playShutter();
+    });
+  });
+}
 
 // Default Mock Booking if none in localStorage
 const defaultBooking = {

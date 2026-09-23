@@ -26,36 +26,35 @@
     <!-- ==================== SIDEBAR ==================== -->
     <aside class="dashboard-sidebar">
       <div class="dashboard-brand">
-        <a href="index.html" class="navbar-brand-logo mb-2">
-          <div class="brand-icon-seal" style="width: 32px; height: 32px;">
-            <i data-lucide="camera" style="width: 16px; height: 16px;"></i>
+        <a href="index.html" class="navbar-brand-logo">
+          <div class="brand-icon-seal">
+            <i data-lucide="camera" style="width: 18px; height: 18px;"></i>
           </div>
-          <div class="brand-name" style="font-size: 1.15rem;">ANCO</div>
+          <div class="brand-name">ANCO</div>
         </a>
-        <span class="studio-pill"><i data-lucide="shield-check" style="width: 12px; height: 12px;"></i> Private Studio</span>
       </div>
 
-      <ul class="dashboard-nav-list">
+      <ul class="dashboard-nav-list" id="dashboardNav">
         <li class="dashboard-nav-item active">
-          <a href="#overviewTab" data-bs-toggle="tab">
+          <a href="#overviewTab" class="dashboard-tab-link" data-tab-target="#overviewTab">
             <i data-lucide="layout-dashboard" style="width: 18px; height: 18px;"></i>
             <span>Overview</span>
           </a>
         </li>
         <li class="dashboard-nav-item">
-          <a href="#customizerTab" data-bs-toggle="tab">
+          <a href="#customizerTab" class="dashboard-tab-link" data-tab-target="#customizerTab">
             <i data-lucide="palette" style="width: 18px; height: 18px;"></i>
             <span>Backdrop & Template</span>
           </a>
         </li>
         <li class="dashboard-nav-item">
-          <a href="#invoicesTab" data-bs-toggle="tab">
+          <a href="#invoicesTab" class="dashboard-tab-link" data-tab-target="#invoicesTab">
             <i data-lucide="receipt" style="width: 18px; height: 18px;"></i>
             <span>Invoices & Payments</span>
           </a>
         </li>
         <li class="dashboard-nav-item">
-          <a href="#vaultTab" data-bs-toggle="tab">
+          <a href="#vaultTab" class="dashboard-tab-link" data-tab-target="#vaultTab">
             <i data-lucide="images" style="width: 18px; height: 18px;"></i>
             <span>Guest Photo Vault</span>
           </a>
@@ -432,7 +431,7 @@
               </div>
 
               <div class="d-flex gap-2">
-                <button class="btn btn-vintage-brass" onclick="alert('Downloading full resolution ZIP archive (342 Photos • 1.4 GB)...');">
+                <button class="btn btn-vintage-brass" id="downloadAllScansBtn">
                   <i data-lucide="download" style="width: 14px; height: 14px;"></i> Download All High-Res (ZIP)
                 </button>
               </div>
@@ -446,7 +445,9 @@
                 <img src="IMAGW/pexels-brahollari-35521114.jpg" alt="Vault Photo 1">
                 <div class="photo-meta">
                   <span>SCAN #001</span>
-                  <a href="#" class="text-brass text-decoration-none">Download</a>
+                  <a href="IMAGW/pexels-brahollari-35521114.jpg" download="ANCO-Scan-001.jpg" class="text-brass text-decoration-none download-scan-link">
+                    <i data-lucide="download" style="width: 12px; height: 12px;"></i> Download
+                  </a>
                 </div>
               </div>
             </div>
@@ -456,7 +457,9 @@
                 <img src="IMAGW/pexels-eusouomatteus-32405337.jpg" alt="Vault Photo 2">
                 <div class="photo-meta">
                   <span>SCAN #002</span>
-                  <a href="#" class="text-brass text-decoration-none">Download</a>
+                  <a href="IMAGW/pexels-eusouomatteus-32405337.jpg" download="ANCO-Scan-002.jpg" class="text-brass text-decoration-none download-scan-link">
+                    <i data-lucide="download" style="width: 12px; height: 12px;"></i> Download
+                  </a>
                 </div>
               </div>
             </div>
@@ -466,7 +469,9 @@
                 <img src="IMAGW/pexels-airamdphoto-26733657.jpg" alt="Vault Photo 3">
                 <div class="photo-meta">
                   <span>SCAN #003</span>
-                  <a href="#" class="text-brass text-decoration-none">Download</a>
+                  <a href="IMAGW/pexels-airamdphoto-26733657.jpg" download="ANCO-Scan-003.jpg" class="text-brass text-decoration-none download-scan-link">
+                    <i data-lucide="download" style="width: 12px; height: 12px;"></i> Download
+                  </a>
                 </div>
               </div>
             </div>
@@ -476,7 +481,9 @@
                 <img src="images/vintage_photostrip_sample_1789972823467.jpg" alt="Vault Photo 4">
                 <div class="photo-meta">
                   <span>STRIP #004</span>
-                  <a href="#" class="text-brass text-decoration-none">Download</a>
+                  <a href="images/vintage_photostrip_sample_1789972823467.jpg" download="ANCO-Strip-004.jpg" class="text-brass text-decoration-none download-scan-link">
+                    <i data-lucide="download" style="width: 12px; height: 12px;"></i> Download
+                  </a>
                 </div>
               </div>
             </div>
